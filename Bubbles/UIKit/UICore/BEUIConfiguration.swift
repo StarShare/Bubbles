@@ -80,8 +80,6 @@ struct BEUIDefaultNavigationBarStyle: BEUINavigationBarStyle {
   public var navBarTranslucent = false
   public var navBarTitleColorOrNil: UIColor? = nil
   public var navBarTitleFontOrNil: UIFont? = nil
-  public var navBarLargeTitleColorOrNil: UIColor? = nil
-  public var navBarLargeTitleFontOrNil: UIFont? = nil
   public var navBarBackIndicatorImageOrNil: UIImage? = nil
   public var navBarLoadingMarginRight: CGFloat = 3
   public var navBarAccessoryViewMarginLeft: CGFloat = 5
@@ -174,7 +172,6 @@ struct BEUIDefaultWindowLevelStyle: BEUIWindowLevelStyle {
 
 struct BEUIDefaultOtherStyle: BEUIOtherStyle {
   public var supportedOrientationMask: UIInterfaceOrientationMask = .portrait
-  public var automaticallyRotateDeviceOrientation: Bool = false
   public var statusbarStyleLightInitially: Bool = false
   public var hidesBottomBarWhenPushedInitially: Bool = false
   public var needsBackBarButtonItemTitle: Bool = false

@@ -26,19 +26,31 @@ class DetailViewController: BEUIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    titleView.title = "DetailViewController -> viewDidLoad() -> titleView.title(23333~)"
     
+    
+    let tap = UITapGestureRecognizer.init(target: self, action: #selector(some))
+    view.addGestureRecognizer(tap)
   }
   
   override func didInitialize() {
     super.didInitialize()
     
-    appearance.shouldSetStatusBarStyleLight = false
-    appearance.navigationBarShadowImageOrNil = UIImage()
-    appearance.navigationBarBackgroundImageOrNil = UIImage.init(color: .red)
-    
-    transition.shouldCustomNavigationBarTransitionWhenPopAppearing = true
-    transition.shouldCustomNavigationBarTransitionWhenPopDisappearing = true
+    appearance.shouldSetStatusBarStyleLight = true
+    appearance.titleViewFontOrNil = UIFont.boldSystemFont(ofSize: 20)
+    appearance.titleViewTintColorOrNil = .red
+    appearance.navigationBarBackgroundImageOrNil = UIImage.init(color: .brown)
+
     transition.shouldCustomNavigationBarTransitionWhenPushAppearing = true
+    transition.shouldCustomNavigationBarTransitionWhenPopAppearing = true
     transition.shouldCustomNavigationBarTransitionWhenPushDisappearing = true
+    transition.shouldCustomNavigationBarTransitionWhenPopDisappearing = true
+    
+    supportedOrientationMask = .landscapeLeft
+  }
+  
+  @objc func some() {
+    let some = SomeViewController()
+    navigationController?.pushViewController(some, animated: true)
   }
 }

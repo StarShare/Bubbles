@@ -33,7 +33,7 @@ public protocol BEUINavigationBarTransition {
   var containerViewBackgroundColorWhenTransitioningOrNil: UIColor? { get set }
 }
 
-public extension BEUIViewController {
+internal extension BEUIViewController {
   
   /// The view add TransitionNavigationBarIfNeeded
   func addTransitionNavigationBarIfNeeded() {
@@ -76,7 +76,7 @@ public extension BEUIViewController {
   func hidenNavigationBarBackgroundView(_ hiden: Bool) {
     guard let navBar = navigationController?.navigationBar else { return }
     guard let backgroundView: UIView = navBar.value(forKey: "backgroundView") as? UIView else { return }
-    backgroundView.alpha = hiden ? 0 : 1
+    backgroundView.isHidden = hiden
   }
   
   /// To resize TransitionNavigationBar Frame

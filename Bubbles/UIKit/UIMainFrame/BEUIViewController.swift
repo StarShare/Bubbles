@@ -14,6 +14,7 @@ struct BEUINavigationBarDefaultAppearance: BEUINavigationBarAppearance {
   public var navigationBarShadowImageOrNil: UIImage? = BEUIConfiguration.style.navigationBarStyle.navBarShadowImageOrNil
   public var navigationBarTintColorOrNil: UIColor? = BEUIConfiguration.style.navigationBarStyle.navBarTintColorOrNil
   public var titleViewTintColorOrNil: UIColor? = nil
+  public var titleViewFontOrNil: UIFont? = BEUIConfiguration.style.navigationBarStyle.navBarTitleFontOrNil
   public var backBarButtonItemTitleOrNil: String? = nil
 }
 
@@ -44,12 +45,18 @@ open class BEUIViewController: UIViewController {
   /// @see init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   /// @see init?(coder aDecoder: NSCoder)
   open func didInitialize() {
+    titleView = BEUINavigationTitleView()
     style = BEUIConfiguration.style.viewControllerStyle
     transition = BEUINavigationBarDefaultTransition()
     appearance = BEUINavigationBarDefaultAppearance()
     supportedOrientationMask = BEUIConfiguration.style.otherStyle.supportedOrientationMask
-    extendedLayoutIncludesOpaqueBars = true
     hidesBottomBarWhenPushed = BEUIConfiguration.style.otherStyle.hidesBottomBarWhenPushedInitially
+    extendedLayoutIncludesOpaqueBars = true
+  }
+  
+  /// viewController Keeping Appear When SetViewControllers
+  open func viewControllerKeepingAppearWhenSetViewControllers(_ animated: Bool) {
+    navigationItem.titleView = titleView
   }
   
   /// The style guide the BEUIViewController should use.
@@ -61,14 +68,17 @@ open class BEUIViewController: UIViewController {
     }
   }
   
+  /// The titleView of UINavigationBar.
+  public var titleView: BEUINavigationTitleView!
+  
   /// The supported OrientationMask.
-  var supportedOrientationMask: UIInterfaceOrientationMask!
+  public var supportedOrientationMask: UIInterfaceOrientationMask!
   
   /// The transition guide the UIViewController should use.
-  var transition: BEUINavigationBarTransition!
+  public var transition: BEUINavigationBarTransition!
   
   /// The Appearance guide the UINavigationController.NavigationBar should use.
-  var appearance: BEUINavigationBarAppearance!
+  public var appearance: BEUINavigationBarAppearance!
   
   open override func viewDidLoad() {
     super.viewDidLoad()
@@ -78,39 +88,39 @@ open class BEUIViewController: UIViewController {
     }
   }
   
-  open override func viewWillAppear(_ animated: Bool) {
-    renderNavigationStyle(self, animated: animated)
-    super.viewWillAppear(animated)
-  }
-  
   /// MARK: - CustomNavigationBarTransition
   
   /// The navBar of CustomTransition.
-  var transitionNavigationBar: UINavigationBar?
+  internal var transitionNavigationBar: UINavigationBar?
   
   /// The flag of lock TransitionNavigationBar.
-  var lockTransitionNavigationBar: Bool = false
+  internal var lockTransitionNavigationBar: Bool = false
   
   /// The flag of lock originContainerView BackgroundColor.
-  var originContainerViewBackgroundColor: UIColor?
+  internal var originContainerViewBackgroundColor: UIColor?
   
   /// The flag of lock originView ClipsToBounds.
-  var originClipsToBounds: Bool = false
+  internal var originClipsToBounds: Bool = false
   
   /// The flag of NavigationBarBackgroundViewHidden.
-  var prefersNavigationBarBackgroundViewHidden: Bool = false {
+  internal var prefersNavigationBarBackgroundViewHidden: Bool = false {
     didSet {
       hidenNavigationBarBackgroundView(prefersNavigationBarBackgroundViewHidden)
     }
   }
   
+  open override func viewWillAppear(_ animated: Bool) {
+    navigationItem.titleView = titleView
+    renderNavigationStyle(self, animated: animated)
+    super.viewWillAppear(animated)
+  }
+  
   open override func viewDidAppear(_ animated: Bool) {
-    guard let navigationBar = navigationController?.navigationBar else {
-      super.viewDidAppear(animated)
-      return
-    }
     if transitionNavigationBar != nil {
-      BEUIViewController.replaceNavigationBarStyle(source: transitionNavigationBar!, target: navigationBar)
+      if let navigationBar = navigationController?.navigationBar {
+        BEUIViewController.replaceNavigationBarStyle(source: transitionNavigationBar!,
+                                                     target: navigationBar)
+      }
       removeTransitionNavigationBarIfNeeded()
       lockTransitionNavigationBar = true
       let coordinator = transitionCoordinator
@@ -147,15 +157,14 @@ open class BEUIViewController: UIViewController {
     
     if isCurrentToViewController == true && lockTransitionNavigationBar == false {
       var shouldCustomNavigationBarTransition = false
-      
-      if transitionNavigationBar != nil {
+      if transitionNavigationBar == nil {
         if isPushingViewContrller == true {
-          let pushAppearing = transition.shouldCustomNavigationBarTransitionWhenPushAppearing
-          let pushDisappearing = transition.shouldCustomNavigationBarTransitionWhenPushDisappearing
+          let pushAppearing = to?.transition.shouldCustomNavigationBarTransitionWhenPushAppearing ?? false
+          let pushDisappearing = from?.transition.shouldCustomNavigationBarTransitionWhenPushDisappearing ?? false
           shouldCustomNavigationBarTransition = pushAppearing || pushDisappearing
         } else {
-          let popAppearing = transition.shouldCustomNavigationBarTransitionWhenPopAppearing
-          let popDisappearing = transition.shouldCustomNavigationBarTransitionWhenPopDisappearing
+          let popAppearing = to?.transition.shouldCustomNavigationBarTransitionWhenPopAppearing ?? false
+          let popDisappearing = from?.transition.shouldCustomNavigationBarTransitionWhenPopDisappearing ?? false
           shouldCustomNavigationBarTransition = popAppearing || popDisappearing
         }
       }
@@ -187,6 +196,8 @@ open class BEUIViewController: UIViewController {
   open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
     return supportedOrientationMask
   }
+  
+  /// MARK: - StatusBarStyle
   
   open override var preferredStatusBarStyle: UIStatusBarStyle {
     return appearance.shouldSetStatusBarStyleLight ? .lightContent : .`default`

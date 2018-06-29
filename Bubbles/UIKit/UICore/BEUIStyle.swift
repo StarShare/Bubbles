@@ -178,12 +178,6 @@ public protocol BEUINavigationBarStyle {
   /// The font of navBarTitle
   var navBarTitleFontOrNil: UIFont? { get }
   
-  /// The color of navBarLargeTitle
-  var navBarLargeTitleColorOrNil: UIColor? { get }
-  
-  /// The font of navBarLargeTitle
-  var navBarLargeTitleFontOrNil: UIFont? { get }
-  
   /// The image of navBarBackIndicator
   var navBarBackIndicatorImageOrNil: UIImage? { get }
   
@@ -430,9 +424,6 @@ public protocol BEUIOtherStyle {
   
   /// The Orientation of Interface
   var supportedOrientationMask: UIInterfaceOrientationMask { get }
-  
-  /// The Enabled of automaticallyRotateDeviceOrientation
-  var automaticallyRotateDeviceOrientation: Bool { get }
   
   /// The Enabled of statusbarStyleLightInitially
   var statusbarStyleLightInitially: Bool { get }

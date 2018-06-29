@@ -10,16 +10,6 @@ import UIKit
 
 open class BEUINavigationController: UINavigationController {
   
-  /// will call after initialization.
-  ///
-  /// @see init(rootViewController: UIViewController)
-  /// @see init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?)
-  /// @see init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  /// @see init?(coder aDecoder: NSCoder)
-  open func didInitialize() {
-    style = BEUIConfiguration.style.navigationBarStyle
-  }
-  
   public override init(rootViewController: UIViewController) {
     super.init(rootViewController: rootViewController)
     didInitialize()
@@ -40,6 +30,16 @@ open class BEUINavigationController: UINavigationController {
     didInitialize()
   }
   
+  /// will call after initialization.
+  ///
+  /// @see init(rootViewController: UIViewController)
+  /// @see init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?)
+  /// @see init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+  /// @see init?(coder aDecoder: NSCoder)
+  open func didInitialize() {
+    style = BEUIConfiguration.style.navigationBarStyle
+  }
+  
   /// The style guide the BEUINavigationController should use.
   public var style: BEUINavigationBarStyle? {
     didSet {
@@ -54,6 +54,15 @@ open class BEUINavigationController: UINavigationController {
   }
   
   /// MARK: - CustomNavigationBarTransition
+  
+  open override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
+    super.setViewControllers(viewControllers, animated: animated)
+    if topViewController == viewControllers.last {
+      if let controller: BEUIViewController = topViewController as? BEUIViewController {
+        controller.viewControllerKeepingAppearWhenSetViewControllers(animated)
+      }
+    }
+  }
   
   open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
     guard let disappearing: BEUIViewController = viewControllers.last as? BEUIViewController else {
@@ -127,5 +136,29 @@ open class BEUINavigationController: UINavigationController {
       }
       disappearing.prefersNavigationBarBackgroundViewHidden = true
     }
+  }
+  
+  /// MARK: - Autorotate
+  
+  open override var shouldAutorotate: Bool {
+    return true
+  }
+  
+  open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    if let controller = topViewController {
+      return controller.supportedInterfaceOrientations
+    }
+    let orientation = BEUIConfiguration.style.otherStyle.supportedOrientationMask
+    return orientation
+  }
+  
+  /// MARK: - StatusBarStyle
+  
+  open override var preferredStatusBarStyle: UIStatusBarStyle {
+    if let controller = topViewController {
+      return controller.preferredStatusBarStyle
+    }
+    let light = BEUIConfiguration.style.otherStyle.statusbarStyleLightInitially
+    return light ? .lightContent : .`default`
   }
 }

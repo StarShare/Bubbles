@@ -11,6 +11,8 @@
 		B72A770D20E37EF900B46AD2 /* BEUINavigationBarTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A770C20E37EF900B46AD2 /* BEUINavigationBarTransition.swift */; };
 		B72A771220E4B33000B46AD2 /* BEUINavigationBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A771120E4B33000B46AD2 /* BEUINavigationBarAppearance.swift */; };
 		B72A771420E4BEEF00B46AD2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72A771320E4BEEF00B46AD2 /* DetailViewController.swift */; };
+		B74A451320E5D3DD0036B7F8 /* SomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A451220E5D3DD0036B7F8 /* SomeViewController.swift */; };
+		B74A451720E5E6F60036B7F8 /* BEUINavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A451620E5E6F60036B7F8 /* BEUINavigationTitleView.swift */; };
 		B74D211D20E1DBB7007DE688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74D211C20E1DBB7007DE688 /* AppDelegate.swift */; };
 		B74D211F20E1DBB7007DE688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74D211E20E1DBB7007DE688 /* ViewController.swift */; };
 		B74D212220E1DBB7007DE688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74D212020E1DBB7007DE688 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		B72A770C20E37EF900B46AD2 /* BEUINavigationBarTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUINavigationBarTransition.swift; sourceTree = "<group>"; };
 		B72A771120E4B33000B46AD2 /* BEUINavigationBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUINavigationBarAppearance.swift; sourceTree = "<group>"; };
 		B72A771320E4BEEF00B46AD2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B74A451220E5D3DD0036B7F8 /* SomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeViewController.swift; sourceTree = "<group>"; };
+		B74A451620E5E6F60036B7F8 /* BEUINavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUINavigationTitleView.swift; sourceTree = "<group>"; };
 		B74D211920E1DBB7007DE688 /* Bubbles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bubbles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74D211C20E1DBB7007DE688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B74D211E20E1DBB7007DE688 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 		B72A770A20E37ECA00B46AD2 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				B74A451520E5E6DB0036B7F8 /* UINavigationTitleView */,
 				B72A771020E4B32500B46AD2 /* UINavigationBarAppearance */,
 				B72A770B20E37ECA00B46AD2 /* UINavigationBarTransition */,
 			);
@@ -111,6 +116,14 @@
 				B72A771120E4B33000B46AD2 /* BEUINavigationBarAppearance.swift */,
 			);
 			path = UINavigationBarAppearance;
+			sourceTree = "<group>";
+		};
+		B74A451520E5E6DB0036B7F8 /* UINavigationTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				B74A451620E5E6F60036B7F8 /* BEUINavigationTitleView.swift */,
+			);
+			path = UINavigationTitleView;
 			sourceTree = "<group>";
 		};
 		B74D211020E1DBB7007DE688 = {
@@ -140,6 +153,7 @@
 				B74D211C20E1DBB7007DE688 /* AppDelegate.swift */,
 				B74D211E20E1DBB7007DE688 /* ViewController.swift */,
 				B72A771320E4BEEF00B46AD2 /* DetailViewController.swift */,
+				B74A451220E5D3DD0036B7F8 /* SomeViewController.swift */,
 				B74D212020E1DBB7007DE688 /* Main.storyboard */,
 				B74D212320E1DBB8007DE688 /* Assets.xcassets */,
 				B74D212520E1DBB8007DE688 /* LaunchScreen.storyboard */,
@@ -326,11 +340,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B72A771420E4BEEF00B46AD2 /* DetailViewController.swift in Sources */,
+				B74A451720E5E6F60036B7F8 /* BEUINavigationTitleView.swift in Sources */,
 				B74D214D20E1DD2C007DE688 /* BEUINavigationController.swift in Sources */,
 				B74D215220E1E4B1007DE688 /* BEUIStyle.swift in Sources */,
 				B7FB76CD20E327F50056DD85 /* BEUIConfiguration.swift in Sources */,
 				B72A770920E363D600B46AD2 /* BEUIViewController.swift in Sources */,
 				B74D211F20E1DBB7007DE688 /* ViewController.swift in Sources */,
+				B74A451320E5D3DD0036B7F8 /* SomeViewController.swift in Sources */,
 				B72A771220E4B33000B46AD2 /* BEUINavigationBarAppearance.swift in Sources */,
 				B72A770D20E37EF900B46AD2 /* BEUINavigationBarTransition.swift in Sources */,
 				B74D211D20E1DBB7007DE688 /* AppDelegate.swift in Sources */,

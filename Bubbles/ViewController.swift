@@ -12,6 +12,7 @@ class ViewController: BEUIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    titleView.title = "ViewController"
     
     let tap = UITapGestureRecognizer.init(target: self, action: #selector(detail))
     view.addGestureRecognizer(tap)
@@ -20,9 +21,7 @@ class ViewController: BEUIViewController {
   override func didInitialize() {
     super.didInitialize()
     
-    appearance.shouldSetStatusBarStyleLight = true
-    appearance.navigationBarShadowImageOrNil = UIImage()
-    appearance.navigationBarBackgroundImageOrNil = UIImage.init(color: .green)
+    appearance.titleViewTintColorOrNil = .blue
   }
   
   @objc func detail() {
