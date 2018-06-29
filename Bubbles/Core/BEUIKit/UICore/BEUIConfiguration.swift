@@ -57,7 +57,7 @@ struct BEUIDefaultTextFieldStyle: BEUITextFieldStyle {
 }
 
 struct BEUIDefaultViewControllerStyle: BEUIViewControllerStyle {
-  public var backgroundColorOrNil: UIColor? = nil
+  public var backgroundColorOrNil: UIColor? = .white
 }
 
 struct BEUIDefaultNavigationBarStyle: BEUINavigationBarStyle {
@@ -74,9 +74,6 @@ struct BEUIDefaultNavigationBarStyle: BEUINavigationBarStyle {
   public var navBarTitleColorOrNil: UIColor? = nil
   public var navBarTitleFontOrNil: UIFont? = nil
   public var navBarBackIndicatorImageOrNil: UIImage? = nil
-  public var navBarLoadingMarginRight: CGFloat = 3
-  public var navBarAccessoryViewMarginLeft: CGFloat = 5
-  public var navBarActivityIndicatorViewStyle: UIActivityIndicatorViewStyle = .gray
 }
 
 struct BEUIDefaultTabBarStyle: BEUITabBarStyle {

@@ -12,7 +12,7 @@ class ViewController: BEUIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    titleView.title = "Home"
+    titleView.title = "Bubbles"
   }
   
   override func didInitialize() {

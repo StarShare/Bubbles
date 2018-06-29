@@ -173,15 +173,6 @@ public protocol BEUINavigationBarStyle {
   
   /// The image of navBarBackIndicator
   var navBarBackIndicatorImageOrNil: UIImage? { get }
-  
-  /// The Margin of navBarLoading Right
-  var navBarLoadingMarginRight: CGFloat { get }
-  
-  /// The Margin of navBarAccessoryView Left
-  var navBarAccessoryViewMarginLeft: CGFloat { get }
-  
-  /// The IndicatorViewStyle of navBarActivity
-  var navBarActivityIndicatorViewStyle: UIActivityIndicatorViewStyle { get }
 }
 
 public protocol BEUITabBarStyle {

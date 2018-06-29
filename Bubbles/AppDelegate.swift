@@ -19,6 +19,8 @@ class AppDelegate: ModuleDelegate {
     Context.shared.env = .dev
     _ = super.application(application, didFinishLaunchingWithOptions: launchOptions)
     
+    BEUIConfiguration.style.navigationBarStyle = UINavigationBarStyle()
+    
     let nav = BEUINavigationController.init(rootViewController: ViewController())
     window = UIWindow.init(frame: UIScreen.main.bounds)
     window?.rootViewController = nav

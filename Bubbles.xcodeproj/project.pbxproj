@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B707D7B820E6409500181227 /* UIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B707D7B720E6409500181227 /* UIStyle.swift */; };
 		B73CB83C20E6353700151982 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73CB82F20E6353600151982 /* Service.swift */; };
 		B73CB83D20E6353700151982 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73CB83020E6353600151982 /* Event.swift */; };
 		B73CB83E20E6353700151982 /* ModuleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73CB83120E6353600151982 /* ModuleDelegate.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B707D7B720E6409500181227 /* UIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyle.swift; sourceTree = "<group>"; };
 		B73CB82F20E6353600151982 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B73CB83020E6353600151982 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		B73CB83120E6353600151982 /* ModuleDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B707D7B520E6405700181227 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B707D7B620E6405700181227 /* UI */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		B707D7B620E6405700181227 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B707D7B720E6409500181227 /* UIStyle.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		B73CB82E20E6353600151982 /* BEModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				B73CB84920E63A5200151982 /* Bubbles.entitlements */,
+				B707D7B520E6405700181227 /* Configuration */,
 				B7E446E020E633D7006BF016 /* Core */,
 				B74D211C20E1DBB7007DE688 /* AppDelegate.swift */,
 				B74D211E20E1DBB7007DE688 /* ViewController.swift */,
@@ -432,6 +451,7 @@
 				B74D211F20E1DBB7007DE688 /* ViewController.swift in Sources */,
 				B73CB83D20E6353700151982 /* Event.swift in Sources */,
 				B74D211D20E1DBB7007DE688 /* AppDelegate.swift in Sources */,
+				B707D7B820E6409500181227 /* UIStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
