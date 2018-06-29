@@ -110,7 +110,7 @@ open class BEUIViewController: UIViewController {
       return
     }
     if transitionNavigationBar != nil {
-      BEUIViewController.replaceNavigationBarStyle(one: transitionNavigationBar!, other: navigationBar)
+      BEUIViewController.replaceNavigationBarStyle(source: transitionNavigationBar!, target: navigationBar)
       removeTransitionNavigationBarIfNeeded()
       lockTransitionNavigationBar = true
       let coordinator = transitionCoordinator
@@ -186,10 +186,6 @@ open class BEUIViewController: UIViewController {
   
   open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
     return supportedOrientationMask
-  }
-  
-  open override var prefersHomeIndicatorAutoHidden: Bool {
-    return false
   }
   
   open override var preferredStatusBarStyle: UIStatusBarStyle {

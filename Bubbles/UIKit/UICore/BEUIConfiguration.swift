@@ -76,6 +76,8 @@ struct BEUIDefaultNavigationBarStyle: BEUINavigationBarStyle {
   public var navBarShadowImageOrNil: UIImage? = nil
   public var navBarBarTintColorOrNil: UIColor? = nil
   public var navBarTintColorOrNil: UIColor? = nil
+  public var navBarStyle: UIBarStyle = .default
+  public var navBarTranslucent = false
   public var navBarTitleColorOrNil: UIColor? = nil
   public var navBarTitleFontOrNil: UIFont? = nil
   public var navBarLargeTitleColorOrNil: UIColor? = nil
@@ -83,7 +85,7 @@ struct BEUIDefaultNavigationBarStyle: BEUINavigationBarStyle {
   public var navBarBackIndicatorImageOrNil: UIImage? = nil
   public var navBarLoadingMarginRight: CGFloat = 3
   public var navBarAccessoryViewMarginLeft: CGFloat = 5
-  public var navBarActivityIndicatorViewStyle: UIActivityIndicatorView.Style = .gray
+  public var navBarActivityIndicatorViewStyle: UIActivityIndicatorViewStyle = .gray
 }
 
 struct BEUIDefaultTabBarStyle: BEUITabBarStyle {
@@ -166,8 +168,8 @@ struct BEUIDefaultTableStyle: BEUITableStyle {
 }
 
 struct BEUIDefaultWindowLevelStyle: BEUIWindowLevelStyle {
-  public var windowLevelUIModalPresentationView: UIWindow.Level = UIWindow.Level(UIWindow.Level.alert.rawValue - 4.0)
-  public var windowLevelUIImagePreviewView: UIWindow.Level = UIWindow.Level(UIWindow.Level.statusBar.rawValue + 1.0)
+  public var windowLevelUIModalPresentationView: UIWindowLevel = UIWindowLevelAlert - 4.0
+  public var windowLevelUIImagePreviewView: UIWindowLevel = UIWindowLevelStatusBar + 1.0
 }
 
 struct BEUIDefaultOtherStyle: BEUIOtherStyle {

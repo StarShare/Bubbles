@@ -10,6 +10,16 @@ import UIKit
 
 open class BEUINavigationController: UINavigationController {
   
+  /// will call after initialization.
+  ///
+  /// @see init(rootViewController: UIViewController)
+  /// @see init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?)
+  /// @see init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+  /// @see init?(coder aDecoder: NSCoder)
+  open func didInitialize() {
+    style = BEUIConfiguration.style.navigationBarStyle
+  }
+  
   public override init(rootViewController: UIViewController) {
     super.init(rootViewController: rootViewController)
     didInitialize()
@@ -30,24 +40,16 @@ open class BEUINavigationController: UINavigationController {
     didInitialize()
   }
   
-  /// will call after initialization.
-  ///
-  /// @see init(rootViewController: UIViewController)
-  /// @see init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?)
-  /// @see init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  /// @see init?(coder aDecoder: NSCoder)
-  open func didInitialize() {
-    style = BEUIConfiguration.style.navigationBarStyle
-  }
-  
   /// The style guide the BEUINavigationController should use.
   public var style: BEUINavigationBarStyle? {
     didSet {
       guard let style = style else { return }
       navigationBar.setBackgroundImage(style.navBarBackgroundImageOrNil, for: .default)
-      navigationBar.shadowImage = style.navBarShadowImageOrNil
+      navigationBar.isTranslucent = style.navBarTranslucent
       navigationBar.barTintColor = style.navBarBarTintColorOrNil
+      navigationBar.shadowImage = style.navBarShadowImageOrNil
       navigationBar.tintColor = style.navBarTintColorOrNil
+      navigationBar.barStyle = style.navBarStyle
     }
   }
   
@@ -58,7 +60,7 @@ open class BEUINavigationController: UINavigationController {
       super.pushViewController(viewController, animated: animated)
       return
     }
-    guard let wilappearing: BEUIViewController = viewController as? BEUIViewController else {
+    guard let willappearing: BEUIViewController = viewController as? BEUIViewController else {
       super.pushViewController(viewController, animated: animated)
       return
     }
@@ -66,7 +68,7 @@ open class BEUINavigationController: UINavigationController {
     var shouldCustomNavigationBarTransition: Bool = false
     if disappearing.transition.shouldCustomNavigationBarTransitionWhenPushDisappearing == true {
       shouldCustomNavigationBarTransition = true
-    } else if wilappearing.transition.shouldCustomNavigationBarTransitionWhenPushDisappearing == true {
+    } else if willappearing.transition.shouldCustomNavigationBarTransitionWhenPushAppearing == true {
       shouldCustomNavigationBarTransition = true
     }
     if shouldCustomNavigationBarTransition == true {
@@ -78,9 +80,9 @@ open class BEUINavigationController: UINavigationController {
   }
   
   open override func popViewController(animated: Bool) -> UIViewController? {
-    let disappearingvc = viewControllers.last
-    let wilappearingvc = viewControllers.count >= 2 ? viewControllers[viewControllers.count - 2] : nil
-    handleCustomNavigationBarTransitionWhenPop(disappearOrNil: disappearingvc, appearOrNil: wilappearingvc)
+    let disappearingvc  = viewControllers.last
+    let willappearingvc = viewControllers.count >= 2 ? viewControllers[viewControllers.count - 2] : nil
+    handleCustomNavigationBarTransitionWhenPop(disappearOrNil: disappearingvc, appearOrNil: willappearingvc)
     return super.popViewController(animated: animated)
   }
   
@@ -108,20 +110,20 @@ open class BEUINavigationController: UINavigationController {
   
   func handleCustomNavigationBarTransitionWhenPop(disappearOrNil: UIViewController?,
                                                   appearOrNil: UIViewController?) {
-    guard let disappearing: BEUIViewController = disappearOrNil as? BEUIViewController else { return }
-    guard let wilappearing: BEUIViewController = appearOrNil as? BEUIViewController else { return }
+    guard let  disappearing: BEUIViewController = disappearOrNil as? BEUIViewController else { return }
+    guard let willappearing: BEUIViewController = appearOrNil as? BEUIViewController else { return }
     
     var shouldCustomNavigationBarTransition: Bool = false
-    if disappearing.transition.shouldCustomNavigationBarTransitionWhenPushDisappearing == true {
+    if disappearing.transition.shouldCustomNavigationBarTransitionWhenPopDisappearing == true {
       shouldCustomNavigationBarTransition = true
-    } else if wilappearing.transition.shouldCustomNavigationBarTransitionWhenPushDisappearing == true {
+    } else if willappearing.transition.shouldCustomNavigationBarTransitionWhenPopAppearing == true {
       shouldCustomNavigationBarTransition = true
     }
     if shouldCustomNavigationBarTransition == true {
       disappearing.addTransitionNavigationBarIfNeeded()
-      if wilappearing.transitionNavigationBar != nil {
-        BEUIViewController.replaceNavigationBarStyle(one: wilappearing.transitionNavigationBar!,
-                                                     other: navigationBar)
+      if willappearing.transitionNavigationBar != nil {
+        BEUIViewController.replaceNavigationBarStyle(source: willappearing.transitionNavigationBar!,
+                                                     target: navigationBar)
       }
       disappearing.prefersNavigationBarBackgroundViewHidden = true
     }

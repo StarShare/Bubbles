@@ -166,6 +166,12 @@ public protocol BEUINavigationBarStyle {
   /// The color of navBar TintColor
   var navBarTintColorOrNil: UIColor? { get }
   
+  /// The style of navBar
+  var navBarStyle: UIBarStyle { get }
+  
+  /// The translucent of navBar
+  var navBarTranslucent: Bool { get }
+  
   /// The color of navBarTitle
   var navBarTitleColorOrNil: UIColor? { get }
   
@@ -188,7 +194,7 @@ public protocol BEUINavigationBarStyle {
   var navBarAccessoryViewMarginLeft: CGFloat { get }
   
   /// The IndicatorViewStyle of navBarActivity
-  var navBarActivityIndicatorViewStyle: UIActivityIndicatorView.Style { get }
+  var navBarActivityIndicatorViewStyle: UIActivityIndicatorViewStyle { get }
 }
 
 public protocol BEUITabBarStyle {
@@ -414,10 +420,10 @@ public protocol BEUITableStyle {
 public protocol BEUIWindowLevelStyle {
   
   /// The windowLevel of UIAlertView
-  var windowLevelUIModalPresentationView: UIWindow.Level { get }
+  var windowLevelUIModalPresentationView: UIWindowLevel { get }
   
   /// The windowLevel of UIImagePreviewView
-  var windowLevelUIImagePreviewView: UIWindow.Level { get }
+  var windowLevelUIImagePreviewView: UIWindowLevel { get }
 }
 
 public protocol BEUIOtherStyle {

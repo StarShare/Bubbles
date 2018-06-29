@@ -14,7 +14,7 @@ public protocol BEUINavigationBarTransition {
   /// only shouldCustomizeNavigationBarTransitionIfHideable == true
   var preferredNavigationBarHidden: Bool { get set }
   
-  /// The Enabled of CustomizeNavigationBar show & hiden
+  /// The Enabled of NavigationBar show & hiden
   var shouldCustomizeNavigationBarTransitionIfHideable: Bool { get set }
   
   /// The Enabled of CustomizeNavigationBar WhenPushAppearing
@@ -41,27 +41,15 @@ public extension BEUIViewController {
     guard let originBar = navigationController?.navigationBar else { return }
     
     let customBar = _BEUITransitionNavigationBar()
-    if customBar.barStyle != originBar.barStyle {
-      customBar.barStyle = originBar.barStyle
-    }
-    if customBar.isTranslucent != originBar.isTranslucent {
-      customBar.isTranslucent = originBar.isTranslucent
-    }
-    if let barTintColor = customBar.barTintColor {
-      if barTintColor.isEqual(originBar.barTintColor) == false {
-        customBar.barTintColor = originBar.barTintColor;
-      }
-    } else if let barTintColor = originBar.barTintColor {
-      if barTintColor.isEqual(customBar.barTintColor) == false {
-        customBar.barTintColor = originBar.barTintColor;
-      }
-    }
     customBar.setBackgroundImage(originBar.backgroundImage(for: .default), for: .default)
+    customBar.isTranslucent = originBar.isTranslucent
+    customBar.barTintColor = originBar.barTintColor
     customBar.shadowImage = originBar.shadowImage
+    customBar.tintColor = originBar.tintColor
+    customBar.barStyle = originBar.barStyle
     
     transitionNavigationBar = customBar
     resizeTransitionNavigationBarFrame()
-    
     if navigationController?.isNavigationBarHidden == false {
       view.addSubview(transitionNavigationBar!)
     }
@@ -75,33 +63,27 @@ public extension BEUIViewController {
   }
   
   /// Replace NavigationBar Style
-  class func replaceNavigationBarStyle(one: UINavigationBar,other: UINavigationBar) {
-    other.barStyle = one.barStyle
-    other.barTintColor = one.barTintColor
-    other.setBackgroundImage(one.backgroundImage(for: .default), for: .default)
-    other.shadowImage = one.shadowImage
+  class func replaceNavigationBarStyle(source: UINavigationBar,target: UINavigationBar) {
+    target.setBackgroundImage(source.backgroundImage(for: .default), for: .default)
+    target.isTranslucent = source.isTranslucent
+    target.barTintColor = source.barTintColor
+    target.shadowImage = source.shadowImage
+    target.tintColor = source.tintColor
+    target.barStyle = source.barStyle
   }
   
   /// The navigationController.navigationBar backgroundView hiden
   func hidenNavigationBarBackgroundView(_ hiden: Bool) {
-    guard let backgroundView: UIView =
-      navigationController?.navigationBar.value(forKey: "backgroundView")
-        as?
-      UIView else {
-      return
-    }
+    guard let navBar = navigationController?.navigationBar else { return }
+    guard let backgroundView: UIView = navBar.value(forKey: "backgroundView") as? UIView else { return }
     backgroundView.alpha = hiden ? 0 : 1
   }
   
   /// To resize TransitionNavigationBar Frame
   func resizeTransitionNavigationBarFrame() {
     guard view.window != nil else { return }
-    guard let backgroundView: UIView =
-      navigationController?.navigationBar.value(forKey: "backgroundView")
-        as?
-      UIView else {
-        return
-    }
+    guard let navBar = navigationController?.navigationBar else { return }
+    guard let backgroundView: UIView = navBar.value(forKey: "backgroundView") as? UIView else { return }
     let rect = backgroundView.superview?.convert(backgroundView.frame, to: view) ?? .zero
     transitionNavigationBar?.frame = rect
   }  
@@ -109,13 +91,10 @@ public extension BEUIViewController {
 
 fileprivate class _BEUITransitionNavigationBar: UINavigationBar {
   
+  /// layout _BEUITransitionNavigationBar backgroundView.
   override func layoutSubviews() {
     super.layoutSubviews()
-    guard let backgroundView: UIView = value(forKey: "backgroundView")
-        as?
-      UIView else {
-        return
-    }
-    backgroundView.frame = bounds
+    guard let content: UIView = value(forKey: "backgroundView") as? UIView else { return }
+    content.frame = bounds
   }
 }

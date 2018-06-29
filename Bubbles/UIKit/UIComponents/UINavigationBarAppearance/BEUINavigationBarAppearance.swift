@@ -33,7 +33,7 @@ public extension BEUIViewController {
   
   /// Render NavigationBar Style
   func renderNavigationStyle(_ controller: BEUIViewController, animated: Bool) {
-    guard controller.navigationController?.topViewController == controller else { return }
+    guard controller == controller.navigationController?.topViewController else { return }
     
     if controller.appearance.shouldSetStatusBarStyleLight {
       if UIApplication.shared.statusBarStyle != .lightContent {
@@ -45,20 +45,22 @@ public extension BEUIViewController {
       }
     }
     
+    guard let navController = controller.navigationController else { return }
+    
     if controller.transition.shouldCustomizeNavigationBarTransitionIfHideable {
       if controller.transition.preferredNavigationBarHidden {
-        if controller.navigationController?.isNavigationBarHidden == false {
-          controller.navigationController?.setNavigationBarHidden(true, animated: animated)
+        if navController.isNavigationBarHidden == false {
+          navController.setNavigationBarHidden(true, animated: animated)
         }
       } else {
-        if controller.navigationController?.isNavigationBarHidden == true {
-          controller.navigationController?.setNavigationBarHidden(false, animated: animated)
+        if navController.isNavigationBarHidden == true {
+          navController.setNavigationBarHidden(false, animated: animated)
         }
       }
     }
     
-    controller.navigationController?.navigationBar.setBackgroundImage(controller.appearance.navigationBarBackgroundImageOrNil, for: .default)
-    controller.navigationController?.navigationBar.shadowImage = controller.appearance.navigationBarShadowImageOrNil
-    controller.navigationController?.navigationBar.tintColor = controller.appearance.navigationBarTintColorOrNil
+    navController.navigationBar.setBackgroundImage(controller.appearance.navigationBarBackgroundImageOrNil, for: .default)
+    navController.navigationBar.shadowImage = controller.appearance.navigationBarShadowImageOrNil
+    navController.navigationBar.tintColor = controller.appearance.navigationBarTintColorOrNil
   }
 }
