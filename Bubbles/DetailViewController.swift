@@ -27,6 +27,11 @@ class DetailViewController: BEUIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+  }
+  
+  override func didInitialize() {
+    super.didInitialize()
+    
     appearance.shouldSetStatusBarStyleLight = false
     appearance.navigationBarShadowImageOrNil = UIImage()
     appearance.navigationBarBackgroundImageOrNil = UIImage.init(color: .red)

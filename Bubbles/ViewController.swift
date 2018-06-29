@@ -15,6 +15,10 @@ class ViewController: BEUIViewController {
     
     let tap = UITapGestureRecognizer.init(target: self, action: #selector(detail))
     view.addGestureRecognizer(tap)
+  }
+  
+  override func didInitialize() {
+    super.didInitialize()
     
     appearance.shouldSetStatusBarStyleLight = true
     appearance.navigationBarShadowImageOrNil = UIImage()
