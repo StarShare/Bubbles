@@ -1,10 +1,3 @@
-//
-//  BEUINavigationController.swift
-//  Bubbles
-//
-//  Created by god on 2018/6/26.
-//  Copyright © 2018年 God. All rights reserved.
-//
 
 import UIKit
 
@@ -65,6 +58,23 @@ open class BEUINavigationController: UINavigationController {
   }
   
   open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    if let currentViewController = topViewController {
+      if BEUIConfiguration.style.otherStyle.needsBackBarButtonItemTitle == false {
+        currentViewController.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "",
+                                                                                      style: .plain,
+                                                                                      target: nil,
+                                                                                      action: nil)
+      } else {
+        if let controller: BEUIViewController = currentViewController as? BEUIViewController {
+          let title = controller.appearance.backBarButtonItemTitleOrNil
+          currentViewController.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: title,
+                                                                                        style: .plain,
+                                                                                        target: nil,
+                                                                                        action: nil)
+        }
+      }
+    }
+    
     guard let disappearing: BEUIViewController = viewControllers.last as? BEUIViewController else {
       super.pushViewController(viewController, animated: animated)
       return

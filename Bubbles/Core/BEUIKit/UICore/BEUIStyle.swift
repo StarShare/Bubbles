@@ -1,10 +1,3 @@
-//
-//  BEUIStyle.swift
-//  Bubbles
-//
-//  Created by god on 2018/6/26.
-//  Copyright © 2018年 God. All rights reserved.
-//
 
 import UIKit
 

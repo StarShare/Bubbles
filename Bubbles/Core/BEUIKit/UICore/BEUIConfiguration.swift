@@ -1,16 +1,9 @@
-//
-//  BEUICustomStyle.swift
-//  Bubbles
-//
-//  Created by god on 2018/6/27.
-//  Copyright © 2018年 God. All rights reserved.
-//
 
 import UIKit
 
 public struct BEUIConfiguration: BEUIStyle {
   
-  public static var `style`: BEUIStyle = BEUIConfiguration()
+  public static var style: BEUIStyle = BEUIConfiguration()
   
   public var colorStyle: BEUIColorStyle = BEUIDefaultColorStyle()
   public var controlStyle: BEUIControlStyle = BEUIDefaultControlStyle()

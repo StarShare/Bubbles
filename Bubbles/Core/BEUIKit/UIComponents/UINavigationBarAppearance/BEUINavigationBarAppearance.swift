@@ -1,10 +1,3 @@
-//
-//  BEUINavigationBarAppearance.swift
-//  Bubbles
-//
-//  Created by god on 2018/6/28.
-//  Copyright © 2018年 God. All rights reserved.
-//
 
 import UIKit
 

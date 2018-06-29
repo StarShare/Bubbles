@@ -12,21 +12,11 @@ class ViewController: BEUIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    titleView.title = "ViewController"
-    
-    let tap = UITapGestureRecognizer.init(target: self, action: #selector(detail))
-    view.addGestureRecognizer(tap)
+    titleView.title = "Home"
   }
   
   override func didInitialize() {
     super.didInitialize()
-    
-    appearance.titleViewTintColorOrNil = .blue
-  }
-  
-  @objc func detail() {
-    let detail = DetailViewController()
-    navigationController?.pushViewController(detail, animated: true)
   }
 }
 
