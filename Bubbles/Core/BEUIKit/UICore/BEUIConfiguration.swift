@@ -70,7 +70,7 @@ struct BEUIDefaultNavigationBarStyle: BEUINavigationBarStyle {
   public var navBarBarTintColorOrNil: UIColor? = nil
   public var navBarTintColorOrNil: UIColor? = nil
   public var navBarStyle: UIBarStyle = .default
-  public var navBarTranslucent = false
+  public var navBarTranslucent = true
   public var navBarTitleColorOrNil: UIColor? = nil
   public var navBarTitleFontOrNil: UIFont? = nil
   public var navBarBackIndicatorImageOrNil: UIImage? = nil
@@ -81,6 +81,8 @@ struct BEUIDefaultTabBarStyle: BEUITabBarStyle {
   public var tabBarShadowImageOrNil: UIImage? = nil
   public var tabBarBarTintColorOrNil: UIColor? = nil
   public var tabBarTintColorOrNil: UIColor? = nil
+  public var tabBarStyle: UIBarStyle = .default
+  public var tabBarTranslucent = true
   public var tabBarItemTitleColorOrNil: UIColor? = nil
   public var tabBarItemTitleColorSelectedOrNil: UIColor? = nil
   public var tabBarItemTitleFontOrNil: UIFont? = nil

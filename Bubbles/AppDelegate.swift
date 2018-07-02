@@ -20,10 +20,29 @@ class AppDelegate: ModuleDelegate {
     _ = super.application(application, didFinishLaunchingWithOptions: launchOptions)
     
     BEUIConfiguration.style.navigationBarStyle = UINavigationBarStyle()
+    BEUIConfiguration.style.tabBarStyle = UITabBarStyle()
+    BEUIConfiguration.style.otherStyle = UIOtherStyle()
     
-    let nav = BEUINavigationController.init(rootViewController: ViewController())
+    let chats = BEUINavigationController.init(rootViewController: ChatsScene())
+    chats.tabBarItem.title = "Bubbles"
+    chats.tabBarItem.image = UIImage(named: "tabbar_chats")
+    
+    let contacts = BEUINavigationController.init(rootViewController: ContactsScene())
+    contacts.tabBarItem.title = "通讯录"
+    contacts.tabBarItem.image = UIImage(named: "tabbar_contacts")
+    
+    let discover = BEUINavigationController.init(rootViewController: DiscoverScene())
+    discover.tabBarItem.title = "发现"
+    discover.tabBarItem.image = UIImage(named: "tabbar_discover")
+    
+    let mine = BEUINavigationController.init(rootViewController: MineScene())
+    mine.tabBarItem.title = "我的"
+    mine.tabBarItem.image = UIImage(named: "tabbar_mine")
+    
+    let tab = BEUITabBarController()
+    tab.setViewControllers([chats,contacts,discover,mine], animated: false)
     window = UIWindow.init(frame: UIScreen.main.bounds)
-    window?.rootViewController = nav
+    window?.rootViewController = tab
     window?.makeKeyAndVisible()
     
     return true

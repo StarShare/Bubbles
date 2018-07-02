@@ -189,6 +189,12 @@ public protocol BEUITabBarStyle {
   /// The color of tabBar TintColor
   var tabBarTintColorOrNil: UIColor? { get }
   
+  /// The style of tabBar
+  var tabBarStyle: UIBarStyle { get }
+  
+  /// The translucent of tabBar
+  var tabBarTranslucent: Bool { get }
+  
   /// The color of tabBarItemTitle
   var tabBarItemTitleColorOrNil: UIColor? { get }
   
