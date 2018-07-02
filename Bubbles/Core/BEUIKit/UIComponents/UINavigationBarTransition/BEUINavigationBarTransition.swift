@@ -28,7 +28,7 @@ public protocol BEUINavigationBarTransition {
 
 internal extension BEUIViewController {
   
-  /// The view add TransitionNavigationBarIfNeeded
+  /// The view add TransitionNavigationBarIfNeeded.
   func addTransitionNavigationBarIfNeeded() {
     guard view.window != nil else { return }
     guard let originBar = navigationController?.navigationBar else { return }
@@ -48,14 +48,18 @@ internal extension BEUIViewController {
     }
   }
   
-  /// The view remove TransitionNavigationBarIfNeeded
+  /// The view remove TransitionNavigationBarIfNeeded.
   func removeTransitionNavigationBarIfNeeded() {
     guard let navBar = transitionNavigationBar else { return }
     navBar.removeFromSuperview()
     transitionNavigationBar = nil
   }
   
-  /// Replace NavigationBar Style
+  /// Replace NavigationBar Style.
+  ///
+  /// - Parameters:
+  ///   - source: source navBar
+  ///   - target: target navBar
   class func replaceNavigationBarStyle(source: UINavigationBar,target: UINavigationBar) {
     target.setBackgroundImage(source.backgroundImage(for: .default), for: .default)
     target.isTranslucent = source.isTranslucent
@@ -65,7 +69,9 @@ internal extension BEUIViewController {
     target.barStyle = source.barStyle
   }
   
-  /// The navigationController.navigationBar backgroundView hiden
+  /// The navigationController.navigationBar backgroundView hiden.
+  ///
+  /// - Parameter hiden: hiden flag
   func hidenNavigationBarBackgroundView(_ hiden: Bool) {
     guard let navBar = navigationController?.navigationBar else { return }
     guard let backgroundView: UIView = navBar.value(forKey: "backgroundView") as? UIView else { return }

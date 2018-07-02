@@ -11,6 +11,16 @@ public class ModuleConfig {
   public var services: [ServiceName: AnyClass]
   public var customEvents: [EventName]
   
+  /// Configuration parameter of Module.
+  ///
+  /// - Parameters:
+  ///   - name: module name
+  ///   - desc: module description
+  ///   - version: module version
+  ///   - enabled: module enabled
+  ///   - moduleClass: module class
+  ///   - services: module services
+  ///   - customEvents: customEvents
   public init(name: String = "",
               desc: String = "",
               version: String = "",

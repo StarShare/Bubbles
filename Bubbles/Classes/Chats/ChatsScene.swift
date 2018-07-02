@@ -8,15 +8,15 @@
 
 import UIKit
 
-class ChatsScene: BEUIViewController {
+class ChatsScene: BEUITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
     titleView.title = "Bubbles"
   }
   
-  override func didInitialize() {
-    super.didInitialize()
+  override func didInitialize(style: UITableViewStyle) {
+    super.didInitialize(style: style)
   }
 }
 

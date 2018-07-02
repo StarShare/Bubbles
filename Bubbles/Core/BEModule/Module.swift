@@ -27,11 +27,11 @@ public protocol Module {
   func modDidUpdateContinueUserActivity(_ context: Context)
   func modDidCustomEvent(_ context: Context, name: EventName, object: Any?)
   
-  func registerServices()
   func getEnable() -> Bool
   func getName() -> String
   func getVersion() -> String
   func getCreation() -> Date
+  func registerServices()
   func getSercvices() -> [ServiceName:AnyClass]
   func getCustomEvents() -> [EventName]
   func destroy()

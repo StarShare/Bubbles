@@ -28,6 +28,10 @@ public protocol BEUINavigationBarAppearance {
 internal extension BEUIViewController {
   
   /// Render NavigationBar Style
+  ///
+  /// - Parameters:
+  ///   - controller: whose style should render
+  ///   - animated: animated if need
   func renderNavigationStyle(_ controller: BEUIViewController, animated: Bool) {
     if controller.appearance.shouldSetStatusBarStyleLight {
       if UIApplication.shared.statusBarStyle != .lightContent {

@@ -89,10 +89,12 @@ public class ModuleManager {
     }
   }
   
+  @discardableResult
   public func find(_ name: String) -> Module? {
     return modules[name]
   }
   
+  @discardableResult
   public func find(_ type: Module.Type) -> Module? {
     let className = "\(type)"
     let name = moduleClasses.filter({ (key,value) -> Bool in
@@ -107,6 +109,7 @@ public class ModuleManager {
     return modules[name!]
   }
   
+  @discardableResult
   public func getModules() -> [Module] {
     return modules.map({ (key,value) -> Module in
       return value

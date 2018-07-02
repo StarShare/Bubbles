@@ -22,6 +22,7 @@ class AppDelegate: ModuleDelegate {
     BEUIConfiguration.style.navigationBarStyle = UINavigationBarStyle()
     BEUIConfiguration.style.tabBarStyle = UITabBarStyle()
     BEUIConfiguration.style.otherStyle = UIOtherStyle()
+    BEUIConfiguration.style.tableStyle = UITableStyle()
     
     let chats = BEUINavigationController.init(rootViewController: ChatsScene())
     chats.tabBarItem.title = "Bubbles"
@@ -44,6 +45,9 @@ class AppDelegate: ModuleDelegate {
     window = UIWindow.init(frame: UIScreen.main.bounds)
     window?.rootViewController = tab
     window?.makeKeyAndVisible()
+    
+    let table = BEUITableViewController()
+    table.tableView.backgroundView = UIView()
     
     return true
   }

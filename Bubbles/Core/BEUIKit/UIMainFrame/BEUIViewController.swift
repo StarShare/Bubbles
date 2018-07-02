@@ -39,7 +39,7 @@ open class BEUIViewController: UIViewController {
   /// @see init?(coder aDecoder: NSCoder)
   open func didInitialize() {
     titleView = BEUINavigationTitleView()
-    style = BEUIConfiguration.style.viewControllerStyle
+    uiStyle = BEUIConfiguration.style.viewControllerStyle
     transition = BEUINavigationBarDefaultTransition()
     appearance = BEUINavigationBarDefaultAppearance()
     supportedOrientationMask = BEUIConfiguration.style.otherStyle.supportedOrientationMask
@@ -47,17 +47,20 @@ open class BEUIViewController: UIViewController {
     extendedLayoutIncludesOpaqueBars = true
   }
   
+  /// something todo initSubviews.
+  open func initSubviews() { }
+  
   /// viewController Keeping Appear When SetViewControllers
   open func viewControllerKeepingAppearWhenSetViewControllers(_ animated: Bool) {
     navigationItem.titleView = titleView
   }
   
   /// The style guide the BEUIViewController should use.
-  public var style: BEUIViewControllerStyle? {
+  public var uiStyle: BEUIViewControllerStyle? {
     didSet {
       if (false == isViewLoaded) { return }
-      guard let style = style else { return }
-      view.backgroundColor = style.backgroundColorOrNil
+      guard let uiStyle = uiStyle else { return }
+      view.backgroundColor = uiStyle.backgroundColorOrNil
     }
   }
   
@@ -76,9 +79,11 @@ open class BEUIViewController: UIViewController {
   open override func viewDidLoad() {
     super.viewDidLoad()
     
-    if let style = style {
-      view.backgroundColor = style.backgroundColorOrNil
+    if let uiStyle = uiStyle {
+      view.backgroundColor = uiStyle.backgroundColorOrNil
     }
+    
+    initSubviews()
   }
   
   /// MARK: - CustomNavigationBarTransition

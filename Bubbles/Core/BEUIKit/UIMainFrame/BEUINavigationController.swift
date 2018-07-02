@@ -30,19 +30,19 @@ open class BEUINavigationController: UINavigationController {
   /// @see init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   /// @see init?(coder aDecoder: NSCoder)
   open func didInitialize() {
-    style = BEUIConfiguration.style.navigationBarStyle
+    uiStyle = BEUIConfiguration.style.navigationBarStyle
   }
   
   /// The style guide the BEUINavigationController should use.
-  public var style: BEUINavigationBarStyle? {
+  public var uiStyle: BEUINavigationBarStyle? {
     didSet {
-      guard let style = style else { return }
-      navigationBar.setBackgroundImage(style.navBarBackgroundImageOrNil, for: .default)
-      navigationBar.isTranslucent = style.navBarTranslucent
-      navigationBar.barTintColor = style.navBarBarTintColorOrNil
-      navigationBar.shadowImage = style.navBarShadowImageOrNil
-      navigationBar.tintColor = style.navBarTintColorOrNil
-      navigationBar.barStyle = style.navBarStyle
+      guard let uiStyle = uiStyle else { return }
+      navigationBar.setBackgroundImage(uiStyle.navBarBackgroundImageOrNil, for: .default)
+      navigationBar.isTranslucent = uiStyle.navBarTranslucent
+      navigationBar.barTintColor = uiStyle.navBarBarTintColorOrNil
+      navigationBar.shadowImage = uiStyle.navBarShadowImageOrNil
+      navigationBar.tintColor = uiStyle.navBarTintColorOrNil
+      navigationBar.barStyle = uiStyle.navBarStyle
     }
   }
   

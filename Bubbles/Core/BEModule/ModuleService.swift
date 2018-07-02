@@ -27,7 +27,7 @@ public class ModuleService {
       "mod disabled:\(moduleConfig.name) -> \(moduleConfig.version)",
       identifier: "ModuleService"
     )
-    removeModule(moduleConfig.name)
+    removeModuleIfNeed(moduleConfig.name)
     titan_log(
       "remove disabled mod:\(moduleConfig.name) -> \(moduleConfig.version)",
       identifier: "ModuleService"
@@ -36,7 +36,7 @@ public class ModuleService {
   }
   
   @discardableResult
-  public func removeModule(_ moduleName: String) -> Module? {
+  public func removeModuleIfNeed(_ moduleName: String) -> Module? {
     let removed = moduleManager.remove(moduleName)
     return removed
   }

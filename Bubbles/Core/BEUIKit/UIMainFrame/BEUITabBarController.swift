@@ -18,19 +18,19 @@ open class BEUITabBarController: UITabBarController {
   /// @see init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   /// @see init?(coder aDecoder: NSCoder)
   open func didInitialize() {
-    style = BEUIConfiguration.style.tabBarStyle
+    uiStyle = BEUIConfiguration.style.tabBarStyle
   }
   
   /// The style guide the BEUITabBarController should use.
-  public var style: BEUITabBarStyle? {
+  public var uiStyle: BEUITabBarStyle? {
     didSet {
-      guard let style = style else { return }
-      tabBar.backgroundImage = style.tabBarBackgroundImageOrNil
-      tabBar.isTranslucent = style.tabBarTranslucent
-      tabBar.barTintColor = style.tabBarBarTintColorOrNil
-      tabBar.shadowImage = style.tabBarShadowImageOrNil
-      tabBar.tintColor = style.tabBarTintColorOrNil
-      tabBar.barStyle = style.tabBarStyle
+      guard let uiStyle = uiStyle else { return }
+      tabBar.backgroundImage = uiStyle.tabBarBackgroundImageOrNil
+      tabBar.isTranslucent = uiStyle.tabBarTranslucent
+      tabBar.barTintColor = uiStyle.tabBarBarTintColorOrNil
+      tabBar.shadowImage = uiStyle.tabBarShadowImageOrNil
+      tabBar.tintColor = uiStyle.tabBarTintColorOrNil
+      tabBar.barStyle = uiStyle.tabBarStyle
     }
   }
   

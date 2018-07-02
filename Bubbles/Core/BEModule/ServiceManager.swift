@@ -32,6 +32,7 @@ public class ServiceManager {
     lock.unlock()
   }
   
+  @discardableResult
   public func create(service: ServiceName) throws -> AnyObject {
     if !checkValid(service: service) {
       titan_log(
@@ -61,6 +62,7 @@ public class ServiceManager {
   
   // MARK: Private
   
+  @discardableResult
   func serviceImplClass(_ service: ServiceName) throws -> AnyClass {
     for (key, value) in safeServices {
       if key == service {
@@ -73,6 +75,7 @@ public class ServiceManager {
     throw ServiceError.createServiceClassFailed
   }
   
+  @discardableResult
   func checkValid(service: ServiceName) -> Bool {
     for (key, _) in safeServices {
       if key == service {

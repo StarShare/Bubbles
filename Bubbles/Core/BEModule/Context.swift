@@ -1,6 +1,11 @@
 
 import UIKit
 
+/// Enum of Environment Type.
+///
+/// - dev: development
+/// - test: testing
+/// - prod: production
 public enum EnvironmentType {
   case dev
   case test

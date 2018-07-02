@@ -4,7 +4,6 @@ import UIKit
 public struct BEUIConfiguration: BEUIStyle {
   
   public static var style: BEUIStyle = BEUIConfiguration()
-  
   public var colorStyle: BEUIColorStyle = BEUIDefaultColorStyle()
   public var controlStyle: BEUIControlStyle = BEUIDefaultControlStyle()
   public var buttonStyle: BEUIButtonStyle = BEUIDefaultButtonStyle()
