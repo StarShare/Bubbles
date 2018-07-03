@@ -1,110 +1,90 @@
-//
-//  CacheCore.swift
-//  StarShareCore
-//
-//  Created by BUBUKO on 2018/3/19.
-//  Copyright © 2018年 bugu. All rights reserved.
-//
 
 import Foundation
 import Cache
 import HandyJSON
+import SwiftyJSON
 
 public protocol CacheAware {
   
-  func save<T: Codable>(_ object: T,forKey key: String) throws
-  func save<T: HandyJSON>(_ object: T,forKey key: String) throws
-  func save<T: Codable>(_ object: T,forDomainBean bean: DomainBean) throws
-  func save<T: HandyJSON>(_ object: T,forDomainBean bean: DomainBean) throws
-  
-  func fetch<T: Codable>(ofType type: T.Type, forKey key: String) throws -> T?
+  func save(_ object: JSON, forKey key: String) throws
+  func save(_ object: JSON, forBean bean: Bean) throws
   func fetch<T: HandyJSON>(ofType type: T.Type, forKey key: String) throws -> T?
-  func fetch<T: Codable>(ofType type: T.Type, forDomainBean bean: DomainBean) throws -> T?
-  func fetch<T: HandyJSON>(ofType type: T.Type, forDomainBean bean: DomainBean) throws -> T?
+  func fetch<T: HandyJSON>(ofType type: T.Type, forBean bean: Bean) throws -> T?
+  func remove(forKey key: String) throws
+  func remove(forBean bean: Bean) throws
+  func removeAll() throws
 }
 
 public class CacheCore: CacheAware {
   
-  static let responseCache = CacheCore(responseCacheCore)
-  fileprivate static let responseCacheCore = try! Storage(
+  static let shared = CacheCore(try! Storage(
     diskConfig: DiskConfig(
-    name: "share-response-cache",
-    expiry: .never,
-    maxSize: 10000,
-    directory: try! FileManager.default.url(for: .documentDirectory,
-                                            in: .userDomainMask,
-                                            appropriateFor: nil,
-                                            create: true).appendingPathComponent("CoreCache"),
-    protectionType: .complete
+      name: "share-response-cache",
+      expiry: .never,
+      maxSize: 10000,
+      directory: try! FileManager.default.url(for: .documentDirectory,
+                                              in: .userDomainMask,
+                                              appropriateFor: nil,
+                                              create: true).appendingPathComponent("CoreCache"),
+      protectionType: .complete
     ), memoryConfig: MemoryConfig(
       expiry: .never,
       countLimit: 50,
       totalCostLimit: 0
-  ), transformer:TransformerFactory.forCodable(ofType: HandyJSON))
+  ), transformer:TransformerFactory.forData()))
   
   fileprivate var currentStorage: Storage<Data>
   init(_ storage: Storage<Data>) {
     currentStorage = storage
   }
   
-  public func save<T: Codable>(_ object: T,forKey key: String) throws {
-    try self.currentStorage.setObject(object, forKey: key)
-  }
+  /// MARK: - CacheAware
   
-  public func save<T: HandyJSON>(_ object: T,forKey key: String) throws {
-    let object = object.toJSONString()
-    try self.save(object, forKey: key)
-  }
-  
-  public func save<T: Codable>(_ object: T,forDomainBean bean: DomainBean) throws {
-    if let cacheBean = bean.cacheBean {
-      if cacheBean.enable == true {
-        let key = cacheBean.key
-        guard key.count > 0 else {
-          return
-        }
-        try self.save(object, forKey: key)
-      }
+  public func save(_ object: JSON,forKey key: String) throws {
+    if let data = object.rawString()?.data(using: String.Encoding.utf8) {
+      try self.currentStorage.setObject(data, forKey: key)
     }
   }
   
-  public func save<T: HandyJSON>(_ object: T,forDomainBean bean: DomainBean) throws {
-    if let cacheBean = bean.cacheBean {
-      if cacheBean.enable == true {
-        let key = cacheBean.key
-        guard key.count > 0 else {
-          return
-        }
+  public func save(_ object: JSON,forBean bean: Bean) throws {
+    if let cachePolicy = bean.cachePolicy {
+      if cachePolicy.enable == true {
+        guard let key = cachePolicy.key else { return }
         try self.save(object, forKey: key)
       }
     }
-  }
-  
-  public func fetch<T: Codable>(ofType type: T.Type, forKey key: String) throws -> T? {
-    return try self.currentStorage.entry(ofType: type, forKey: key).object
   }
   
   public func fetch<T: HandyJSON>(ofType type: T.Type, forKey key: String) throws -> T? {
-    let object = try self.fetch(ofType: String.self, forKey: key)
-    return type.deserialize(from: object)
+    let data = try self.currentStorage.entry(forKey: key).object
+    let json = try JSON.init(data: data)
+    return type.deserialize(from: json.rawString())
   }
   
-  public func fetch<T: Codable>(ofType type: T.Type, forDomainBean bean: DomainBean) throws -> T? {
-    if let cacheBean = bean.cacheBean {
-      if cacheBean.enable == true {
-        let key = cacheBean.key
-        guard key.count > 0 else {
-          return nil
-        }
+  public func fetch<T: HandyJSON>(ofType type: T.Type, forBean bean: Bean) throws -> T? {
+    if let cachePolicy = bean.cachePolicy {
+      if cachePolicy.enable == true {
+        guard let key = cachePolicy.key else { return nil }
         return try self.fetch(ofType: type, forKey: key)
       }
     }
-    
     return nil
   }
   
-  public func fetch<T: HandyJSON>(ofType type: T.Type, forDomainBean bean: DomainBean) throws -> T? {
-    let object = try self.fetch(ofType: String.self, forDomainBean: bean)
-    return type.deserialize(from: object)
+  public func remove(forKey key: String) throws {
+    try self.currentStorage.removeObject(forKey: key)
+  }
+  
+  public func remove(forBean bean: Bean) throws {
+    if let cachePolicy = bean.cachePolicy {
+      if cachePolicy.enable == true {
+        guard let key = cachePolicy.key else { return }
+        try self.remove(forKey: key)
+      }
+    }
+  }
+  
+  public func removeAll() throws {
+    try self.currentStorage.removeAll()
   }
 }

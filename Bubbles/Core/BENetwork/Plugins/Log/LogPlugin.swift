@@ -1,10 +1,3 @@
-//
-//  LogPlugin.swift
-//  StarShareCore
-//
-//  Created by BUBUKO on 2018/3/15.
-//  Copyright © 2018年 bugu. All rights reserved.
-//
 
 import Foundation
 import Moya
@@ -12,6 +5,9 @@ import Result
 import SwiftyJSON
 
 final class LogPlugin: PluginType {
+  
+  /// The plugin shared instance.
+  static let shared = LogPlugin()
   
   public func willSend(_ request: RequestType, target: TargetType) {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true

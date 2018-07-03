@@ -14,10 +14,9 @@
 		B709C34A20EA365000B6CC83 /* TaskEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33020EA365000B6CC83 /* TaskEx.swift */; };
 		B709C34B20EA365000B6CC83 /* CoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33120EA365000B6CC83 /* CoreError.swift */; };
 		B709C34C20EA365000B6CC83 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33220EA365000B6CC83 /* Config.swift */; };
-		B709C34D20EA365000B6CC83 /* DomainBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33320EA365000B6CC83 /* DomainBean.swift */; };
-		B709C34E20EA365000B6CC83 /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33420EA365000B6CC83 /* Check.swift */; };
+		B709C34D20EA365000B6CC83 /* Bean.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33320EA365000B6CC83 /* Bean.swift */; };
 		B709C34F20EA365000B6CC83 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33520EA365000B6CC83 /* Core.swift */; };
-		B709C35020EA365000B6CC83 /* CacheBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33620EA365000B6CC83 /* CacheBean.swift */; };
+		B709C35020EA365000B6CC83 /* CachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33620EA365000B6CC83 /* CachePolicy.swift */; };
 		B709C35120EA365000B6CC83 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33820EA365000B6CC83 /* ObservableExtension.swift */; };
 		B709C35220EA365100B6CC83 /* MoyaProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33920EA365000B6CC83 /* MoyaProviderExtension.swift */; };
 		B709C35320EA365100B6CC83 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B709C33A20EA365000B6CC83 /* DictionaryExtension.swift */; };
@@ -46,6 +45,8 @@
 		B74D212720E1DBB8007DE688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74D212520E1DBB8007DE688 /* LaunchScreen.storyboard */; };
 		B74D213220E1DBB9007DE688 /* BubblesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74D213120E1DBB9007DE688 /* BubblesTests.swift */; };
 		B74D213D20E1DBB9007DE688 /* BubblesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74D213C20E1DBB9007DE688 /* BubblesUITests.swift */; };
+		B7D6A41C20EB508A00846465 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6A41B20EB508A00846465 /* Checker.swift */; };
+		B7D6A41E20EB509B00846465 /* CheckerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6A41D20EB509B00846465 /* CheckerFactory.swift */; };
 		B7E4470B20E634A2006BF016 /* BEUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E446FC20E634A2006BF016 /* BEUINavigationController.swift */; };
 		B7E4470C20E634A2006BF016 /* BEUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E446FD20E634A2006BF016 /* BEUIViewController.swift */; };
 		B7E4470D20E634A2006BF016 /* BEUINavigationBarTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4470020E634A2006BF016 /* BEUINavigationBarTransition.swift */; };
@@ -90,10 +91,9 @@
 		B709C33020EA365000B6CC83 /* TaskEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEx.swift; sourceTree = "<group>"; };
 		B709C33120EA365000B6CC83 /* CoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreError.swift; sourceTree = "<group>"; };
 		B709C33220EA365000B6CC83 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		B709C33320EA365000B6CC83 /* DomainBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainBean.swift; sourceTree = "<group>"; };
-		B709C33420EA365000B6CC83 /* Check.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
+		B709C33320EA365000B6CC83 /* Bean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bean.swift; sourceTree = "<group>"; };
 		B709C33520EA365000B6CC83 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
-		B709C33620EA365000B6CC83 /* CacheBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheBean.swift; sourceTree = "<group>"; };
+		B709C33620EA365000B6CC83 /* CachePolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachePolicy.swift; sourceTree = "<group>"; };
 		B709C33820EA365000B6CC83 /* ObservableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableExtension.swift; sourceTree = "<group>"; };
 		B709C33920EA365000B6CC83 /* MoyaProviderExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaProviderExtension.swift; sourceTree = "<group>"; };
 		B709C33A20EA365000B6CC83 /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
@@ -129,6 +129,8 @@
 		B74D213820E1DBB9007DE688 /* BubblesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubblesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74D213C20E1DBB9007DE688 /* BubblesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesUITests.swift; sourceTree = "<group>"; };
 		B74D213E20E1DBB9007DE688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7D6A41B20EB508A00846465 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
+		B7D6A41D20EB509B00846465 /* CheckerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerFactory.swift; sourceTree = "<group>"; };
 		B7E446FC20E634A2006BF016 /* BEUINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEUINavigationController.swift; sourceTree = "<group>"; };
 		B7E446FD20E634A2006BF016 /* BEUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEUIViewController.swift; sourceTree = "<group>"; };
 		B7E4470020E634A2006BF016 /* BEUINavigationBarTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEUINavigationBarTransition.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		B709C32C20EA365000B6CC83 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B7D6A41A20EB507E00846465 /* Checker */,
 				B709C32D20EA365000B6CC83 /* Cache */,
 			);
 			path = Tools;
@@ -234,13 +237,12 @@
 		B709C32F20EA365000B6CC83 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B709C33020EA365000B6CC83 /* TaskEx.swift */,
-				B709C33120EA365000B6CC83 /* CoreError.swift */,
+				B709C33320EA365000B6CC83 /* Bean.swift */,
+				B709C33620EA365000B6CC83 /* CachePolicy.swift */,
 				B709C33220EA365000B6CC83 /* Config.swift */,
-				B709C33320EA365000B6CC83 /* DomainBean.swift */,
-				B709C33420EA365000B6CC83 /* Check.swift */,
 				B709C33520EA365000B6CC83 /* Core.swift */,
-				B709C33620EA365000B6CC83 /* CacheBean.swift */,
+				B709C33120EA365000B6CC83 /* CoreError.swift */,
+				B709C33020EA365000B6CC83 /* TaskEx.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -397,6 +399,15 @@
 				B74D213E20E1DBB9007DE688 /* Info.plist */,
 			);
 			path = BubblesUITests;
+			sourceTree = "<group>";
+		};
+		B7D6A41A20EB507E00846465 /* Checker */ = {
+			isa = PBXGroup;
+			children = (
+				B7D6A41B20EB508A00846465 /* Checker.swift */,
+				B7D6A41D20EB509B00846465 /* CheckerFactory.swift */,
+			);
+			path = Checker;
 			sourceTree = "<group>";
 		};
 		B7E446E020E633D7006BF016 /* Core */ = {
@@ -724,15 +735,16 @@
 				B709C35120EA365000B6CC83 /* ObservableExtension.swift in Sources */,
 				B709C35720EA365100B6CC83 /* LogPlugin.swift in Sources */,
 				B73CB84120E6353700151982 /* ModuleService.swift in Sources */,
-				B709C34D20EA365000B6CC83 /* DomainBean.swift in Sources */,
+				B709C34D20EA365000B6CC83 /* Bean.swift in Sources */,
 				B709C32820E9D79F00B6CC83 /* BEUITableViewController.swift in Sources */,
 				B73CB83C20E6353700151982 /* Service.swift in Sources */,
 				B7E4471220E634A2006BF016 /* UIImage.swift in Sources */,
-				B709C35020EA365000B6CC83 /* CacheBean.swift in Sources */,
+				B709C35020EA365000B6CC83 /* CachePolicy.swift in Sources */,
 				B73CB84720E6353700151982 /* Module.swift in Sources */,
 				B709C35320EA365100B6CC83 /* DictionaryExtension.swift in Sources */,
 				B7E4470B20E634A2006BF016 /* BEUINavigationController.swift in Sources */,
 				B73CB84220E6353700151982 /* Context.swift in Sources */,
+				B7D6A41C20EB508A00846465 /* Checker.swift in Sources */,
 				B709C35620EA365100B6CC83 /* PreparePlugin.swift in Sources */,
 				CB08674420E8A06400BCEBEF /* DiscoverScene.swift in Sources */,
 				B73CB83E20E6353700151982 /* ModuleDelegate.swift in Sources */,
@@ -745,7 +757,7 @@
 				B73CB84620E6353700151982 /* ModuleLogger.swift in Sources */,
 				B7E4471120E634A2006BF016 /* BEUIConfiguration.swift in Sources */,
 				CB08674120E89FFC00BCEBEF /* ContactsScene.swift in Sources */,
-				B709C34E20EA365000B6CC83 /* Check.swift in Sources */,
+				B7D6A41E20EB509B00846465 /* CheckerFactory.swift in Sources */,
 				B73CB83F20E6353700151982 /* ModuleLoader.swift in Sources */,
 				B7E4470E20E634A2006BF016 /* BEUINavigationTitleView.swift in Sources */,
 				B709C34C20EA365000B6CC83 /* Config.swift in Sources */,

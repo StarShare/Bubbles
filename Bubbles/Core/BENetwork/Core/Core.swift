@@ -1,50 +1,54 @@
 
-import Foundation
 import Alamofire
+import Foundation
 import Moya
-import RxSwift
 import HandyJSON
 import SwiftyJSON
+import RxSwift
 
 public typealias HTTPMethod  = Moya.Method
 public typealias HTTPTask    = Moya.Task
 
 public protocol Core {
   
-  /// 网络引擎的一些简单的配置，包含根域名，公共参数等
+  /// The net core configuration.
   ///
-  /// - Returns: 配置(Config).
+  /// - Returns: config
   func configuration() -> Config
   
-  /// 通过 ‘DomainBean’ 从本地读取缓存数据
+  /// Read cache data form disk&memory with Bean.
   ///
   /// - Parameters:
-  ///   - domainBean: 网络请求的一些参数封装
-  ///   - type: 数据模型类型
+  ///   - bean: Parameters that contain network requests
+  ///   - type: type of response shoud be transform
   /// - Returns: Observable with RxSwift
-  func loadCacheIfNeed<T>(_ domainBean: DomainBean,
-                          to type: T.Type) -> Observable<T> where T: HandyJSON
+  func loadCacheIfNeed<T>(with bean: Bean, to type: T.Type) -> Observable<T> where T: HandyJSON
   
-  /// 创建一个普通的网络请求，底层使用 ‘Alamofire’ 、‘RxSwift’
+  /// Remove cache data form disk&memory with Bean.
+  ///
+  /// - Parameter: bean: Parameters that contain network requests
+  /// - Returns: Observable with RxSwift
+  func removeCacheIfNeed(with bean: Bean) -> Observable<Bool>
+  
+  /// Send data request with Bean use ‘Alamofire’ 、‘RxSwift’.
   ///
   /// - Parameters:
-  ///   - domainBean: 网络请求的一些参数封装
-  ///   - type: 数据模型类型
+  ///   - bean: Parameters that contain network requests
+  ///   - type: type of response shoud be transform
   /// - Returns: Observable with RxSwift
-  func request<T>(_ domainBean: DomainBean,
-                  to type: T.Type) -> Observable<T> where T: HandyJSON
+  func request<T>(with bean: Bean, to type: T.Type) -> Observable<T> where T: HandyJSON
   
-  /// 创建一个上传文件的网络请求，底层使用 ‘Alamofire’ 、‘RxSwift’
+  /// Send upload request with Bean use ‘Alamofire’ 、‘RxSwift’.
   ///
-  /// - Parameter domainBean: 网络请求的一些参数封装
+  /// - Parameter bean: Parameters that contain network requests
   /// - Returns: Observable with RxSwift
-  func upload(_ domainBean: DomainBean) -> Observable<ProgressResponse>
+  func upload(with bean: Bean) -> Observable<ProgressResponse>
   
-  /// 创建一个下载文件的网络请求，底层使用 ‘Alamofire’ 、‘RxSwift’
+  /// Send download request with Bean use ‘Alamofire’ 、‘RxSwift’.
   ///
-  /// - Parameter domainBean: 网络请求的一些参数封装
+  /// - Parameter bean: Parameters that contain network requests
   /// - Returns: Observable with RxSwift
-  func download(_ domainBean: DomainBean) -> Observable<ProgressResponse>
+  func download(with bean: Bean) -> Observable<ProgressResponse>
 }
 
 public extension Core {
@@ -53,11 +57,9 @@ public extension Core {
     return Config.default
   }
   
-  func loadCacheIfNeed<T>(_ domainBean: DomainBean,
-                                 to type: T.Type) -> Observable<T> where T: HandyJSON {
-    
+  func readCacheIfNeed<T>(with bean: Bean, to type: T.Type) -> Observable<T> where T: HandyJSON {
     return Observable.create({ observer -> Disposable in
-      let cache = try? CacheCore.responseCache.fetch(ofType: type, forDomainBean: domainBean)
+      let cache = try? CacheCore.shared.fetch(ofType: type, forBean: bean)
       if let cache = cache {
         observer.onNext(cache!)
         observer.onCompleted()
@@ -69,37 +71,48 @@ public extension Core {
     })
   }
   
-  func request<T>(_ domainBean: DomainBean,
-                         to type: T.Type) -> Observable<T> where T: HandyJSON {
-    
-    return MoyaProvider<MoyaTarget>(plugins: [PreludePlugin(),
-                                              PreparePlugin(),
-                                              LogPlugin(),
-                                              CachePlugin(domainBean),
-                                              ProcessPlugin()])
+  func removeCacheIfNeed(with bean: Bean) -> Observable<Bool> {
+    return Observable.create({ observer -> Disposable in
+      do {
+        try CacheCore.shared.remove(forBean: bean)
+        observer.onNext(true)
+        observer.onCompleted()
+      } catch {
+        observer.onNext(false)
+        observer.onCompleted()
+      }
+      
+      return Disposables.create()
+    })
+  }
+  
+  func request<T>(with bean: Bean, to type: T.Type) -> Observable<T> where T: HandyJSON {
+    return MoyaProvider<MoyaTarget>(plugins: [PreludePlugin.shared,
+                                              PreparePlugin.shared,
+                                              LogPlugin.shared,
+                                              CachePlugin(bean),
+                                              ProcessPlugin.shared])
       .rx
-      .request(domainBean.asMoyaTarget())
-      .verification(domainBean.check)
+      .request(bean.asMoyaTarget())
+      .verification(bean.checker)
       .map(to: type, forKeyPath: "data")
   }
   
-  func upload(_ domainBean: DomainBean) -> Observable<ProgressResponse> {
-    
-    return MoyaProvider<MoyaTarget>(plugins: [PreludePlugin(),
-                                              PreparePlugin(),
-                                              LogPlugin(),
-                                              ProcessPlugin()])
+  func upload(with bean: Bean) -> Observable<ProgressResponse> {
+    return MoyaProvider<MoyaTarget>(plugins: [PreludePlugin.shared,
+                                              PreparePlugin.shared,
+                                              LogPlugin.shared,
+                                              ProcessPlugin.shared])
       .rx
-      .progressRequest(domainBean.asMoyaTarget())
+      .progressRequest(bean.asMoyaTarget())
   }
   
-  func download(_ domainBean: DomainBean) -> Observable<ProgressResponse> {
-    
-    return MoyaProvider<MoyaTarget>(plugins: [PreludePlugin(),
-                                              PreparePlugin(),
-                                              LogPlugin(),
-                                              ProcessPlugin()])
+  func download(with bean: Bean) -> Observable<ProgressResponse> {
+    return MoyaProvider<MoyaTarget>(plugins: [PreludePlugin.shared,
+                                              PreparePlugin.shared,
+                                              LogPlugin.shared,
+                                              ProcessPlugin.shared])
       .rx
-      .progressRequest(domainBean.asMoyaTarget())
+      .progressRequest(bean.asMoyaTarget())
   }
 }

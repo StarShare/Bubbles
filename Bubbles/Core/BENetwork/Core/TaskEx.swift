@@ -1,19 +1,11 @@
-//
-//  TaskEx.swift
-//  StarShareCore
-//
-//  Created by BUBUKO on 2018/3/15.
-//  Copyright © 2018年 bugu. All rights reserved.
-//
 
 import Foundation
 import Moya
 
 public extension Task {
   
-  public func mapping(with domainBean: DomainBean) -> Task {
-    
-    let publicParameters = domainBean.publicParameters ?? [:]
+  public func mapping(with bean: Bean) -> Task {
+    let publicParameters = bean.publicParameters ?? [:]
     var task: Task
     switch self {
     case .requestPlain:

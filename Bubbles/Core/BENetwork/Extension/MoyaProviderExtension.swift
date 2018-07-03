@@ -1,10 +1,3 @@
-//
-//  MoyaProviderExtension.swift
-//  StarShareCore
-//
-//  Created by BUBUKO on 2018/3/15.
-//  Copyright © 2018年 bugu. All rights reserved.
-//
 
 import Foundation
 import RxSwift
@@ -15,7 +8,6 @@ import HandyJSON
 extension MoyaProvider: ReactiveCompatible {}
 
 public extension Reactive where Base: MoyaProviderType {
-  
   public func request(_ token: Base.Target, callbackQueue: DispatchQueue? = nil) -> Observable<JSON> {
     return Observable.create({ observer -> Disposable in
       let cancellableToken = self.base.request(token, callbackQueue: callbackQueue, progress: nil) { result in
