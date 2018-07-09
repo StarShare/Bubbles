@@ -14,8 +14,6 @@ class AppDelegate: ModuleDelegate {
   var window: UIWindow?
 
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    
-    /// BEModule setup.
     Context.shared.env = .dev
     _ = super.application(application, didFinishLaunchingWithOptions: launchOptions)
     
