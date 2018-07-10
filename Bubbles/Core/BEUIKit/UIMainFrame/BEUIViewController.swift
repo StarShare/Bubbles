@@ -47,12 +47,23 @@ open class BEUIViewController: UIViewController {
     extendedLayoutIncludesOpaqueBars = true
   }
   
+  /// update navigationItem, such as title、leftBarButtonItem、rightBarButtonItem
+  open func setupNavigationItems() {
+    navigationItem.titleView = titleView
+  }
+  
+  /// update toolbarItem
+  open func setupToolbarItems() {
+    
+  }
+  
   /// something todo initSubviews.
   open func initSubviews() { }
   
   /// viewController Keeping Appear When SetViewControllers
   open func viewControllerKeepingAppearWhenSetViewControllers(_ animated: Bool) {
-    navigationItem.titleView = titleView
+    setupNavigationItems()
+    setupToolbarItems()
   }
   
   /// The style guide the BEUIViewController should use.
@@ -108,12 +119,14 @@ open class BEUIViewController: UIViewController {
   }
   
   open override func viewWillAppear(_ animated: Bool) {
-    navigationItem.titleView = titleView
-    renderNavigationStyle(self, animated: animated)
     super.viewWillAppear(animated)
+    setupNavigationItems()
+    setupToolbarItems()
+    renderNavigationStyle(self, animated: animated)
   }
   
   open override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     if transitionNavigationBar != nil {
       if let navigationBar = navigationController?.navigationBar {
         BEUIViewController.replaceNavigationBarStyle(source: transitionNavigationBar!,
@@ -126,16 +139,15 @@ open class BEUIViewController: UIViewController {
       view.clipsToBounds = originClipsToBounds
     }
     prefersNavigationBarBackgroundViewHidden = false
-    super.viewDidAppear(animated)
   }
   
   open override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
     if transitionNavigationBar != nil {
       removeTransitionNavigationBarIfNeeded()
       lockTransitionNavigationBar = false
       view.clipsToBounds = originClipsToBounds
     }
-    super.viewDidDisappear(animated)
   }
   
   open override func viewDidLayoutSubviews() {

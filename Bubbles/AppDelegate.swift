@@ -22,30 +22,10 @@ class AppDelegate: ModuleDelegate {
     BEUIConfiguration.style.otherStyle = UIOtherStyle()
     BEUIConfiguration.style.tableStyle = UITableStyle()
     
-    let chats = BEUINavigationController.init(rootViewController: ChatsScene())
-    chats.tabBarItem.title = "Bubbles"
-    chats.tabBarItem.image = UIImage(named: "tabbar_chats")
-    
-    let contacts = BEUINavigationController.init(rootViewController: ContactsScene())
-    contacts.tabBarItem.title = "通讯录"
-    contacts.tabBarItem.image = UIImage(named: "tabbar_contacts")
-    
-    let discover = BEUINavigationController.init(rootViewController: DiscoverScene())
-    discover.tabBarItem.title = "发现"
-    discover.tabBarItem.image = UIImage(named: "tabbar_discover")
-    
-    let mine = BEUINavigationController.init(rootViewController: MineScene())
-    mine.tabBarItem.title = "我的"
-    mine.tabBarItem.image = UIImage(named: "tabbar_mine")
-    
-    let tab = BEUITabBarController()
-    tab.setViewControllers([chats,contacts,discover,mine], animated: false)
+    let home = BEUINavigationController.init(rootViewController: HomeScene())
     window = UIWindow.init(frame: UIScreen.main.bounds)
-    window?.rootViewController = tab
+    window?.rootViewController = home
     window?.makeKeyAndVisible()
-    
-    let table = BEUITableViewController()
-    table.tableView.backgroundView = UIView()
     
     return true
   }

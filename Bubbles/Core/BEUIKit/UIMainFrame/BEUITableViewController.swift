@@ -87,6 +87,8 @@ open class BEUITableViewController: BEUIViewController {
                                          BEUITableViewController.contentInsetNotSet) == false
   }
   
+  open func handleTableViewContentInsetChangeEvent(contentInset: UIEdgeInsets) { }
+  
   open override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -155,18 +157,22 @@ open class BEUITableViewController: BEUIViewController {
   
   open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
     if keyPath?.elementsEqual("contentInset") ?? false {
-      handleTableViewContentInsetChangeEvent()
+      if #available(iOS 11.0, *) {
+        handleTableViewContentInsetChangeEvent(contentInset: tableView.adjustedContentInset)
+      } else {
+        handleTableViewContentInsetChangeEvent(contentInset: tableView.contentInset)
+      }
     }
   }
   
   public func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
     if scrollView.isEqual(tableView) {
-      handleTableViewContentInsetChangeEvent()
+      if #available(iOS 11.0, *) {
+        handleTableViewContentInsetChangeEvent(contentInset: tableView.adjustedContentInset)
+      } else {
+        handleTableViewContentInsetChangeEvent(contentInset: tableView.contentInset)
+      }
     }
-  }
-  
-  func handleTableViewContentInsetChangeEvent() {
-    
   }
 }
 

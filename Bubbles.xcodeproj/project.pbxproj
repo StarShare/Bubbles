@@ -45,6 +45,9 @@
 		B74D212720E1DBB8007DE688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74D212520E1DBB8007DE688 /* LaunchScreen.storyboard */; };
 		B74D213220E1DBB9007DE688 /* BubblesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74D213120E1DBB9007DE688 /* BubblesTests.swift */; };
 		B74D213D20E1DBB9007DE688 /* BubblesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74D213C20E1DBB9007DE688 /* BubblesUITests.swift */; };
+		B7967A1520F3682E008F4445 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7967A1420F3682D008F4445 /* HomeScene.swift */; };
+		B7967A1720F3685B008F4445 /* HomeNavbarDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7967A1620F3685B008F4445 /* HomeNavbarDateView.swift */; };
+		B7967A1920F36E58008F4445 /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7967A1820F36E58008F4445 /* HomeCollectionCell.swift */; };
 		B7D6A41C20EB508A00846465 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6A41B20EB508A00846465 /* Checker.swift */; };
 		B7D6A41E20EB509B00846465 /* CheckerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6A41D20EB509B00846465 /* CheckerFactory.swift */; };
 		B7E4470B20E634A2006BF016 /* BEUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E446FC20E634A2006BF016 /* BEUINavigationController.swift */; };
@@ -56,10 +59,6 @@
 		B7E4471120E634A2006BF016 /* BEUIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4470720E634A2006BF016 /* BEUIConfiguration.swift */; };
 		B7E4471220E634A2006BF016 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4470920E634A2006BF016 /* UIImage.swift */; };
 		CB08673520E685AB00BCEBEF /* BEUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */; };
-		CB08673D20E71E8400BCEBEF /* MineScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08673A20E71E8400BCEBEF /* MineScene.swift */; };
-		CB08673E20E71E8400BCEBEF /* ChatsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08673C20E71E8400BCEBEF /* ChatsScene.swift */; };
-		CB08674120E89FFC00BCEBEF /* ContactsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08674020E89FFC00BCEBEF /* ContactsScene.swift */; };
-		CB08674420E8A06400BCEBEF /* DiscoverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08674320E8A06400BCEBEF /* DiscoverScene.swift */; };
 		E137AC533860EFA511A10C6B /* Pods_Bubbles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868816964AD217FF60CF83B /* Pods_Bubbles.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +128,9 @@
 		B74D213820E1DBB9007DE688 /* BubblesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubblesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74D213C20E1DBB9007DE688 /* BubblesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesUITests.swift; sourceTree = "<group>"; };
 		B74D213E20E1DBB9007DE688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7967A1420F3682D008F4445 /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		B7967A1620F3685B008F4445 /* HomeNavbarDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavbarDateView.swift; sourceTree = "<group>"; };
+		B7967A1820F36E58008F4445 /* HomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
 		B7D6A41B20EB508A00846465 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		B7D6A41D20EB509B00846465 /* CheckerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerFactory.swift; sourceTree = "<group>"; };
 		B7E446FC20E634A2006BF016 /* BEUINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEUINavigationController.swift; sourceTree = "<group>"; };
@@ -140,10 +142,6 @@
 		B7E4470720E634A2006BF016 /* BEUIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEUIConfiguration.swift; sourceTree = "<group>"; };
 		B7E4470920E634A2006BF016 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUITabBarController.swift; sourceTree = "<group>"; };
-		CB08673A20E71E8400BCEBEF /* MineScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineScene.swift; sourceTree = "<group>"; };
-		CB08673C20E71E8400BCEBEF /* ChatsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsScene.swift; sourceTree = "<group>"; };
-		CB08674020E89FFC00BCEBEF /* ContactsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsScene.swift; sourceTree = "<group>"; };
-		CB08674320E8A06400BCEBEF /* DiscoverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +399,32 @@
 			path = BubblesUITests;
 			sourceTree = "<group>";
 		};
+		B7967A0E20F3611A008F4445 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B7967A1320F3682D008F4445 /* scene */,
+				B7967A1220F3682D008F4445 /* view */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B7967A1220F3682D008F4445 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B7967A1620F3685B008F4445 /* HomeNavbarDateView.swift */,
+				B7967A1820F36E58008F4445 /* HomeCollectionCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		B7967A1320F3682D008F4445 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				B7967A1420F3682D008F4445 /* HomeScene.swift */,
+			);
+			path = scene;
+			sourceTree = "<group>";
+		};
 		B7D6A41A20EB507E00846465 /* Checker */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,9 +460,9 @@
 			children = (
 				B7E446FC20E634A2006BF016 /* BEUINavigationController.swift */,
 				CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */,
+				B709C32920E9F8D300B6CC83 /* BEUITableView.swift */,
 				B709C32720E9D79F00B6CC83 /* BEUITableViewController.swift */,
 				B7E446FD20E634A2006BF016 /* BEUIViewController.swift */,
-				B709C32920E9F8D300B6CC83 /* BEUITableView.swift */,
 			);
 			path = UIMainFrame;
 			sourceTree = "<group>";
@@ -497,44 +521,9 @@
 		CB08673820E71E8400BCEBEF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CB08674220E8A05800BCEBEF /* Discover */,
-				CB08673F20E89FE300BCEBEF /* Contacts */,
-				CB08673920E71E8400BCEBEF /* MIne */,
-				CB08673B20E71E8400BCEBEF /* Chats */,
+				B7967A0E20F3611A008F4445 /* Home */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		CB08673920E71E8400BCEBEF /* MIne */ = {
-			isa = PBXGroup;
-			children = (
-				CB08673A20E71E8400BCEBEF /* MineScene.swift */,
-			);
-			path = MIne;
-			sourceTree = "<group>";
-		};
-		CB08673B20E71E8400BCEBEF /* Chats */ = {
-			isa = PBXGroup;
-			children = (
-				CB08673C20E71E8400BCEBEF /* ChatsScene.swift */,
-			);
-			path = Chats;
-			sourceTree = "<group>";
-		};
-		CB08673F20E89FE300BCEBEF /* Contacts */ = {
-			isa = PBXGroup;
-			children = (
-				CB08674020E89FFC00BCEBEF /* ContactsScene.swift */,
-			);
-			path = Contacts;
-			sourceTree = "<group>";
-		};
-		CB08674220E8A05800BCEBEF /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-				CB08674320E8A06400BCEBEF /* DiscoverScene.swift */,
-			);
-			path = Discover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -732,11 +721,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B73CB84320E6353700151982 /* ServiceError.swift in Sources */,
+				B7967A1720F3685B008F4445 /* HomeNavbarDateView.swift in Sources */,
 				B709C35120EA365000B6CC83 /* ObservableExtension.swift in Sources */,
 				B709C35720EA365100B6CC83 /* LogPlugin.swift in Sources */,
 				B73CB84120E6353700151982 /* ModuleService.swift in Sources */,
 				B709C34D20EA365000B6CC83 /* Bean.swift in Sources */,
 				B709C32820E9D79F00B6CC83 /* BEUITableViewController.swift in Sources */,
+				B7967A1520F3682E008F4445 /* HomeScene.swift in Sources */,
 				B73CB83C20E6353700151982 /* Service.swift in Sources */,
 				B7E4471220E634A2006BF016 /* UIImage.swift in Sources */,
 				B709C35020EA365000B6CC83 /* CachePolicy.swift in Sources */,
@@ -745,10 +736,9 @@
 				B7E4470B20E634A2006BF016 /* BEUINavigationController.swift in Sources */,
 				B73CB84220E6353700151982 /* Context.swift in Sources */,
 				B7D6A41C20EB508A00846465 /* Checker.swift in Sources */,
+				B7967A1920F36E58008F4445 /* HomeCollectionCell.swift in Sources */,
 				B709C35620EA365100B6CC83 /* PreparePlugin.swift in Sources */,
-				CB08674420E8A06400BCEBEF /* DiscoverScene.swift in Sources */,
 				B73CB83E20E6353700151982 /* ModuleDelegate.swift in Sources */,
-				CB08673E20E71E8400BCEBEF /* ChatsScene.swift in Sources */,
 				B7E4470F20E634A2006BF016 /* BEUINavigationBarAppearance.swift in Sources */,
 				B7E4470C20E634A2006BF016 /* BEUIViewController.swift in Sources */,
 				B7E4471020E634A2006BF016 /* BEUIStyle.swift in Sources */,
@@ -756,7 +746,6 @@
 				B7E4470D20E634A2006BF016 /* BEUINavigationBarTransition.swift in Sources */,
 				B73CB84620E6353700151982 /* ModuleLogger.swift in Sources */,
 				B7E4471120E634A2006BF016 /* BEUIConfiguration.swift in Sources */,
-				CB08674120E89FFC00BCEBEF /* ContactsScene.swift in Sources */,
 				B7D6A41E20EB509B00846465 /* CheckerFactory.swift in Sources */,
 				B73CB83F20E6353700151982 /* ModuleLoader.swift in Sources */,
 				B7E4470E20E634A2006BF016 /* BEUINavigationTitleView.swift in Sources */,
@@ -771,7 +760,6 @@
 				B73CB84020E6353700151982 /* ServiceManager.swift in Sources */,
 				B709C32A20E9F8D300B6CC83 /* BEUITableView.swift in Sources */,
 				B73CB84520E6353700151982 /* ModuleManager.swift in Sources */,
-				CB08673D20E71E8400BCEBEF /* MineScene.swift in Sources */,
 				B709C34920EA365000B6CC83 /* CacheCore.swift in Sources */,
 				B709C34F20EA365000B6CC83 /* Core.swift in Sources */,
 				B73CB83D20E6353700151982 /* Event.swift in Sources */,
