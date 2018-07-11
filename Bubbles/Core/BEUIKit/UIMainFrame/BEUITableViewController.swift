@@ -29,30 +29,45 @@ open class BEUITableViewController: BEUIViewController {
     }
   }
   
+  /// will call after initialization.
+  ///
+  /// @see init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+  /// @see init?(coder aDecoder: NSCoder)
+  /// @see init(style: UITableViewStyle)
+  /// @see init()
   open func didInitialize(style: UITableViewStyle) {
     super.didInitialize()
     tableStyle = style
+    hasSetInitialContentInset = false
     tableViewInitialContentInset = BEUITableViewController.contentInsetNotSet
     tableViewInitialScrollIndicatorInsets = BEUITableViewController.contentInsetNotSet
   }
   
+  /// this tableView style.
   public var tableStyle: UITableViewStyle!
   
-  private var privateTableView: BEUITableView?
+  /// tableview
+  /// sometimes get self->tableView ,but the view is not didload.
+  /// so excute loadViewIfNeeded() to make viewDidload().
   public var tableView: BEUITableView! {
     get {
-      if self.privateTableView == nil {
+      if self.tableView == nil {
         loadViewIfNeeded()
       }
-      return self.privateTableView!
+      return self.tableView!
     }
     set {
-      self.privateTableView = newValue
+      self.tableView = newValue
     }
   }
   
+  /// inset to Identification tableView contentInset&scrollIndicatorInset not set.
   private static let contentInsetNotSet = UIEdgeInsets(top: -1, left: -1, bottom: -1, right: -1)
+  
+  /// has set tableView initialContentInset flag.
   private var hasSetInitialContentInset: Bool = false
+  
+  /// tableView initial contentInset.
   public var tableViewInitialContentInset: UIEdgeInsets! {
     didSet {
       if shouldAdjustTableViewContentInsetsInitially == false {
@@ -75,23 +90,26 @@ open class BEUITableViewController: BEUIViewController {
     }
   }
   
+  /// tableView initial scrollIndicatorInsets.
   public var tableViewInitialScrollIndicatorInsets: UIEdgeInsets!
   
+  /// return should adjustTableViewContentInsetsInitially.
   fileprivate var shouldAdjustTableViewContentInsetsInitially: Bool {
     return UIEdgeInsetsEqualToEdgeInsets(tableViewInitialContentInset,
                                          BEUITableViewController.contentInsetNotSet) == false
   }
   
+  ///  return should adjustTableViewScrollIndicatorInsetsInitially.
   fileprivate var shouldAdjustTableViewScrollIndicatorInsetsInitially: Bool {
     return UIEdgeInsetsEqualToEdgeInsets(tableViewInitialScrollIndicatorInsets,
                                          BEUITableViewController.contentInsetNotSet) == false
   }
   
+  /// tableView contentInset did change.
   open func handleTableViewContentInsetChangeEvent(contentInset: UIEdgeInsets) { }
   
   open override func viewDidLoad() {
     super.viewDidLoad()
-    
     if tableStyle == .plain {
       view.backgroundColor = tableView.uiStyle?.tableViewPlainBackgroundColorOrNil
     } else {
@@ -129,7 +147,7 @@ open class BEUITableViewController: BEUIViewController {
   }
   
   open func initTableView() {
-    if privateTableView == nil {
+    if tableView == nil {
       tableView = BEUITableView.init(frame: view.bounds,
                                      style: tableStyle)
       tableView.delegate = self

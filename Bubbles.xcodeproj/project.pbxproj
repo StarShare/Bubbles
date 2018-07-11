@@ -59,6 +59,8 @@
 		B7E4471120E634A2006BF016 /* BEUIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4470720E634A2006BF016 /* BEUIConfiguration.swift */; };
 		B7E4471220E634A2006BF016 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4470920E634A2006BF016 /* UIImage.swift */; };
 		CB08673520E685AB00BCEBEF /* BEUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */; };
+		CBF7D0C120F4F2D0003CA8AD /* BEUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF7D0C020F4F2D0003CA8AD /* BEUICollectionView.swift */; };
+		CBF7D0C320F4F36A003CA8AD /* BEUICollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF7D0C220F4F36A003CA8AD /* BEUICollectionViewController.swift */; };
 		E137AC533860EFA511A10C6B /* Pods_Bubbles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868816964AD217FF60CF83B /* Pods_Bubbles.framework */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +144,8 @@
 		B7E4470720E634A2006BF016 /* BEUIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEUIConfiguration.swift; sourceTree = "<group>"; };
 		B7E4470920E634A2006BF016 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUITabBarController.swift; sourceTree = "<group>"; };
+		CBF7D0C020F4F2D0003CA8AD /* BEUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUICollectionView.swift; sourceTree = "<group>"; };
+		CBF7D0C220F4F36A003CA8AD /* BEUICollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUICollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,6 +462,8 @@
 		B7E446FB20E634A2006BF016 /* UIMainFrame */ = {
 			isa = PBXGroup;
 			children = (
+				CBF7D0C020F4F2D0003CA8AD /* BEUICollectionView.swift */,
+				CBF7D0C220F4F36A003CA8AD /* BEUICollectionViewController.swift */,
 				B7E446FC20E634A2006BF016 /* BEUINavigationController.swift */,
 				CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */,
 				B709C32920E9F8D300B6CC83 /* BEUITableView.swift */,
@@ -741,6 +747,7 @@
 				B73CB83E20E6353700151982 /* ModuleDelegate.swift in Sources */,
 				B7E4470F20E634A2006BF016 /* BEUINavigationBarAppearance.swift in Sources */,
 				B7E4470C20E634A2006BF016 /* BEUIViewController.swift in Sources */,
+				CBF7D0C320F4F36A003CA8AD /* BEUICollectionViewController.swift in Sources */,
 				B7E4471020E634A2006BF016 /* BEUIStyle.swift in Sources */,
 				B73CB84820E6353700151982 /* ModuleError.swift in Sources */,
 				B7E4470D20E634A2006BF016 /* BEUINavigationBarTransition.swift in Sources */,
@@ -767,6 +774,7 @@
 				B74D211D20E1DBB7007DE688 /* AppDelegate.swift in Sources */,
 				B709C35920EA365100B6CC83 /* ProcessPlugin.swift in Sources */,
 				B707D7B820E6409500181227 /* UIStyle.swift in Sources */,
+				CBF7D0C120F4F2D0003CA8AD /* BEUICollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
