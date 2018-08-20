@@ -9,4 +9,5 @@ target 'Bubbles' do
   pod 'Cache'
   pod 'RxSwift'
   pod 'WCDB.swift'
+  pod 'CocoaAsyncSocket'
 end

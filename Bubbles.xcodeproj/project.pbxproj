@@ -45,6 +45,13 @@
 		B74D212720E1DBB8007DE688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74D212520E1DBB8007DE688 /* LaunchScreen.storyboard */; };
 		B74D213220E1DBB9007DE688 /* BubblesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74D213120E1DBB9007DE688 /* BubblesTests.swift */; };
 		B74D213D20E1DBB9007DE688 /* BubblesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74D213C20E1DBB9007DE688 /* BubblesUITests.swift */; };
+		B76F802E212686FD0003BE49 /* DEVArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76F802D212686FD0003BE49 /* DEVArray.swift */; };
+		B76F8031212690090003BE49 /* DEVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76F8030212690090003BE49 /* DEVSet.swift */; };
+		B76F803421269C5A0003BE49 /* DEVString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76F803321269C5A0003BE49 /* DEVString.swift */; };
+		B76F8037212A662E0003BE49 /* DEVDic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76F8036212A662E0003BE49 /* DEVDic.swift */; };
+		B76F803A212A6A060003BE49 /* LinkedMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76F8039212A6A060003BE49 /* LinkedMap.swift */; };
+		B76F803D212A821A0003BE49 /* DEVTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76F803C212A821A0003BE49 /* DEVTree.swift */; };
+		B76F8040212A8B570003BE49 /* DEVSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76F803F212A8B570003BE49 /* DEVSort.swift */; };
 		B7967A1520F3682E008F4445 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7967A1420F3682D008F4445 /* HomeScene.swift */; };
 		B7967A1720F3685B008F4445 /* HomeNavbarDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7967A1620F3685B008F4445 /* HomeNavbarDateView.swift */; };
 		B7967A1920F36E58008F4445 /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7967A1820F36E58008F4445 /* HomeCollectionCell.swift */; };
@@ -130,6 +137,13 @@
 		B74D213820E1DBB9007DE688 /* BubblesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubblesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74D213C20E1DBB9007DE688 /* BubblesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesUITests.swift; sourceTree = "<group>"; };
 		B74D213E20E1DBB9007DE688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B76F802D212686FD0003BE49 /* DEVArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEVArray.swift; sourceTree = "<group>"; };
+		B76F8030212690090003BE49 /* DEVSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEVSet.swift; sourceTree = "<group>"; };
+		B76F803321269C5A0003BE49 /* DEVString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEVString.swift; sourceTree = "<group>"; };
+		B76F8036212A662E0003BE49 /* DEVDic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEVDic.swift; sourceTree = "<group>"; };
+		B76F8039212A6A060003BE49 /* LinkedMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedMap.swift; sourceTree = "<group>"; };
+		B76F803C212A821A0003BE49 /* DEVTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEVTree.swift; sourceTree = "<group>"; };
+		B76F803F212A8B570003BE49 /* DEVSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEVSort.swift; sourceTree = "<group>"; };
 		B7967A1420F3682D008F4445 /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		B7967A1620F3685B008F4445 /* HomeNavbarDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavbarDateView.swift; sourceTree = "<group>"; };
 		B7967A1820F36E58008F4445 /* HomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
@@ -372,15 +386,17 @@
 		B74D211B20E1DBB7007DE688 /* Bubbles */ = {
 			isa = PBXGroup;
 			children = (
+				B74D211C20E1DBB7007DE688 /* AppDelegate.swift */,
+				B74D212320E1DBB8007DE688 /* Assets.xcassets */,
 				B73CB84920E63A5200151982 /* Bubbles.entitlements */,
 				CB08673820E71E8400BCEBEF /* Classes */,
 				B707D7B520E6405700181227 /* Configuration */,
 				B7E446E020E633D7006BF016 /* Core */,
-				B74D211C20E1DBB7007DE688 /* AppDelegate.swift */,
-				B74D212020E1DBB7007DE688 /* Main.storyboard */,
-				B74D212320E1DBB8007DE688 /* Assets.xcassets */,
-				B74D212520E1DBB8007DE688 /* LaunchScreen.storyboard */,
+				B76F802B212686BE0003BE49 /* Dev */,
+				B76F802A212675A50003BE49 /* GraphQL */,
 				B74D212820E1DBB8007DE688 /* Info.plist */,
+				B74D212520E1DBB8007DE688 /* LaunchScreen.storyboard */,
+				B74D212020E1DBB7007DE688 /* Main.storyboard */,
 			);
 			path = Bubbles;
 			sourceTree = "<group>";
@@ -401,6 +417,83 @@
 				B74D213E20E1DBB9007DE688 /* Info.plist */,
 			);
 			path = BubblesUITests;
+			sourceTree = "<group>";
+		};
+		B76F802A212675A50003BE49 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		B76F802B212686BE0003BE49 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				B76F803E212A8B4D0003BE49 /* Sort */,
+				B76F803B212A820C0003BE49 /* Tree */,
+				B76F8038212A69F60003BE49 /* LinkedMap */,
+				B76F8035212A661B0003BE49 /* Dic */,
+				B76F803221269C4B0003BE49 /* String */,
+				B76F802F21268FF80003BE49 /* Set */,
+				B76F802C212686D50003BE49 /* Array */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		B76F802C212686D50003BE49 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				B76F802D212686FD0003BE49 /* DEVArray.swift */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		B76F802F21268FF80003BE49 /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				B76F8030212690090003BE49 /* DEVSet.swift */,
+			);
+			path = Set;
+			sourceTree = "<group>";
+		};
+		B76F803221269C4B0003BE49 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				B76F803321269C5A0003BE49 /* DEVString.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		B76F8035212A661B0003BE49 /* Dic */ = {
+			isa = PBXGroup;
+			children = (
+				B76F8036212A662E0003BE49 /* DEVDic.swift */,
+			);
+			path = Dic;
+			sourceTree = "<group>";
+		};
+		B76F8038212A69F60003BE49 /* LinkedMap */ = {
+			isa = PBXGroup;
+			children = (
+				B76F8039212A6A060003BE49 /* LinkedMap.swift */,
+			);
+			path = LinkedMap;
+			sourceTree = "<group>";
+		};
+		B76F803B212A820C0003BE49 /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				B76F803C212A821A0003BE49 /* DEVTree.swift */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
+		B76F803E212A8B4D0003BE49 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				B76F803F212A8B570003BE49 /* DEVSort.swift */,
+			);
+			path = Sort;
 			sourceTree = "<group>";
 		};
 		B7967A0E20F3611A008F4445 /* Home */ = {
@@ -678,6 +771,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bubbles/Pods-Bubbles-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -689,6 +783,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -745,9 +840,11 @@
 				B7967A1920F36E58008F4445 /* HomeCollectionCell.swift in Sources */,
 				B709C35620EA365100B6CC83 /* PreparePlugin.swift in Sources */,
 				B73CB83E20E6353700151982 /* ModuleDelegate.swift in Sources */,
+				B76F803D212A821A0003BE49 /* DEVTree.swift in Sources */,
 				B7E4470F20E634A2006BF016 /* BEUINavigationBarAppearance.swift in Sources */,
 				B7E4470C20E634A2006BF016 /* BEUIViewController.swift in Sources */,
 				CBF7D0C320F4F36A003CA8AD /* BEUICollectionViewController.swift in Sources */,
+				B76F8040212A8B570003BE49 /* DEVSort.swift in Sources */,
 				B7E4471020E634A2006BF016 /* BEUIStyle.swift in Sources */,
 				B73CB84820E6353700151982 /* ModuleError.swift in Sources */,
 				B7E4470D20E634A2006BF016 /* BEUINavigationBarTransition.swift in Sources */,
@@ -757,16 +854,21 @@
 				B73CB83F20E6353700151982 /* ModuleLoader.swift in Sources */,
 				B7E4470E20E634A2006BF016 /* BEUINavigationTitleView.swift in Sources */,
 				B709C34C20EA365000B6CC83 /* Config.swift in Sources */,
+				B76F8037212A662E0003BE49 /* DEVDic.swift in Sources */,
 				B73CB84420E6353700151982 /* ModuleConfig.swift in Sources */,
 				CB08673520E685AB00BCEBEF /* BEUITabBarController.swift in Sources */,
 				B709C35220EA365100B6CC83 /* MoyaProviderExtension.swift in Sources */,
 				B709C34A20EA365000B6CC83 /* TaskEx.swift in Sources */,
 				B709C34B20EA365000B6CC83 /* CoreError.swift in Sources */,
+				B76F803421269C5A0003BE49 /* DEVString.swift in Sources */,
 				B709C35820EA365100B6CC83 /* PreludePlugin.swift in Sources */,
 				B709C35420EA365100B6CC83 /* Enum.swift in Sources */,
 				B73CB84020E6353700151982 /* ServiceManager.swift in Sources */,
+				B76F802E212686FD0003BE49 /* DEVArray.swift in Sources */,
+				B76F8031212690090003BE49 /* DEVSet.swift in Sources */,
 				B709C32A20E9F8D300B6CC83 /* BEUITableView.swift in Sources */,
 				B73CB84520E6353700151982 /* ModuleManager.swift in Sources */,
+				B76F803A212A6A060003BE49 /* LinkedMap.swift in Sources */,
 				B709C34920EA365000B6CC83 /* CacheCore.swift in Sources */,
 				B709C34F20EA365000B6CC83 /* Core.swift in Sources */,
 				B73CB83D20E6353700151982 /* Event.swift in Sources */,

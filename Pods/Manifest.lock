@@ -1,7 +1,8 @@
 PODS:
-  - Alamofire (4.7.2)
-  - Cache (5.0.0)
-  - HandyJSON (4.1.1)
+  - Alamofire (4.7.3)
+  - Cache (5.1.0)
+  - CocoaAsyncSocket (7.6.3)
+  - HandyJSON (4.1.3)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
   - Moya/Core (11.0.2):
@@ -17,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Cache
+  - CocoaAsyncSocket
   - HandyJSON
   - Moya
   - RxSwift
@@ -27,6 +29,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Cache
+    - CocoaAsyncSocket
     - HandyJSON
     - Moya
     - Result
@@ -35,15 +38,16 @@ SPEC REPOS:
     - WCDB.swift
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  Cache: fae4826ba52d7a5d9a3a0ad6fe73e3501a82964f
-  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Cache: 7737c595aae7d94c7c0feca2c887288624e3b07e
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  HandyJSON: bc81fbeb62d65ae5d5942ed29bc4a8265d18c1e8
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   WCDB.swift: 4f0f3e19085546ef85a69b5087ec5e1dec0f88b1
 
-PODFILE CHECKSUM: c9bf897159ebf653b406d1d1cbec8a42b5d17c73
+PODFILE CHECKSUM: 88a88e0fe641cb34ad6c2cdaeb3a58925ca83b0a
 
 COCOAPODS: 1.5.3

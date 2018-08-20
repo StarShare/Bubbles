@@ -27,6 +27,24 @@ class AppDelegate: ModuleDelegate {
     window?.rootViewController = home
     window?.makeKeyAndVisible()
     
+    /**
+    let dev_array = DEVArray()
+    dev_array.test()
+    */
+    
+    /**
+    let dev_set = DEVSet()
+    dev_set.test()
+    */
+    
+    let dev_string = DEVString()
+    dev_string.test()
+    
+    /**
+    let dev_dic = DEVDic()
+    dev_dic.test()
+    */
+    
     return true
   }
 }
