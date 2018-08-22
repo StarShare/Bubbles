@@ -18,7 +18,7 @@ class HomeScene: BEUICollectionViewController {
   
   override func setupNavigationItems() {
     super.setupNavigationItems()
-    self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: navBarTodayTimeView)
+    titleView.title = "WeChat"
   }
   
   override func didInitialize(layout: UICollectionViewFlowLayout) {
@@ -37,7 +37,6 @@ class HomeScene: BEUICollectionViewController {
     
     /// navBarTodayTimeView
     navBarTodayTimeView = HomeNavbarDateView()
-    navBarTodayTimeView.frame = CGRect.init(x: 0, y: 0, width: 200, height: 44)
   }
   
   override func initCollectionView() {

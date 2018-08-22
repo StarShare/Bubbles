@@ -15,8 +15,9 @@ class AppDelegate: ModuleDelegate {
 
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     Context.shared.env = .dev
+    Context.shared.application = application
+    Context.shared.launchOptions = launchOptions
     _ = super.application(application, didFinishLaunchingWithOptions: launchOptions)
-    
     BEUIConfiguration.style.navigationBarStyle = UINavigationBarStyle()
     BEUIConfiguration.style.tabBarStyle = UITabBarStyle()
     BEUIConfiguration.style.otherStyle = UIOtherStyle()
@@ -26,24 +27,6 @@ class AppDelegate: ModuleDelegate {
     window = UIWindow.init(frame: UIScreen.main.bounds)
     window?.rootViewController = home
     window?.makeKeyAndVisible()
-    
-    /**
-    let dev_array = DEVArray()
-    dev_array.test()
-    */
-    
-    /**
-    let dev_set = DEVSet()
-    dev_set.test()
-    */
-    
-    let dev_string = DEVString()
-    dev_string.test()
-    
-    /**
-    let dev_dic = DEVDic()
-    dev_dic.test()
-    */
     
     return true
   }

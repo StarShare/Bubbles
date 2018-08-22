@@ -1,6 +1,10 @@
 
 import UIKit
 
+extension UINavigationBar {
+  
+}
+
 open class BEUINavigationTitleView: UIControl {
   
   public private(set) var titleLabel: UILabel!
@@ -69,7 +73,7 @@ open class BEUINavigationTitleView: UIControl {
     if titleLabel.text?.isEmpty == true {
       titleLabelSize = .zero
     } else {
-      titleLabelSize = titleLabel.sizeThatFits(CGSize(width: 999999, height: 999999))
+      titleLabelSize = titleLabel.sizeThatFits(CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT)))
     }
   }
   

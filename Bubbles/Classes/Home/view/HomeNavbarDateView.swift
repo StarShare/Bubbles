@@ -14,14 +14,15 @@ public class HomeNavbarDateView: UIView {
   
   public override init(frame: CGRect) {
     dateLabel = UILabel()
-    dateLabel.backgroundColor = UIColor.clear
+    dateLabel.backgroundColor = UIColor.red
     dateLabel.textColor = UIColor.lightGray
     dateLabel.textAlignment = .left
     dateLabel.font = UIFont.boldSystemFont(ofSize: 20)
-    dateLabel.text = "7月09日 星期一"
+    dateLabel.text = "8月22日 星期一"
     super.init(frame: frame)
     addSubview(dateLabel)
     backgroundColor = UIColor.clear
+    autoresizingMask = [.flexibleWidth, .flexibleHeight]
   }
   
   public required init?(coder aDecoder: NSCoder) {

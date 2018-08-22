@@ -393,7 +393,6 @@
 				B707D7B520E6405700181227 /* Configuration */,
 				B7E446E020E633D7006BF016 /* Core */,
 				B76F802B212686BE0003BE49 /* Dev */,
-				B76F802A212675A50003BE49 /* GraphQL */,
 				B74D212820E1DBB8007DE688 /* Info.plist */,
 				B74D212520E1DBB8007DE688 /* LaunchScreen.storyboard */,
 				B74D212020E1DBB7007DE688 /* Main.storyboard */,
@@ -417,13 +416,6 @@
 				B74D213E20E1DBB9007DE688 /* Info.plist */,
 			);
 			path = BubblesUITests;
-			sourceTree = "<group>";
-		};
-		B76F802A212675A50003BE49 /* GraphQL */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = GraphQL;
 			sourceTree = "<group>";
 		};
 		B76F802B212686BE0003BE49 /* Dev */ = {
