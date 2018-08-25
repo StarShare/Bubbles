@@ -27,9 +27,6 @@ class HomeScene: BEUICollectionViewController {
     layout.minimumLineSpacing = 10
     layout.minimumInteritemSpacing = 10
     super.didInitialize(layout: layout)
-    /// BEUINavigationBarAppearance
-    appearance.navigationBarBackgroundImageOrNil = UIImage.imageCreate(color: UIColor.clear)
-    appearance.navigationBarShadowImageOrNil = UIImage.imageCreate(color: UIColor.clear)
   }
   
   override func initSubviews() {
@@ -70,6 +67,11 @@ extension HomeScene {
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionCell", for: indexPath)
     return cell
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let news = NewsScene()
+    navigationController?.pushViewController(news, animated: true)
   }
 }
 

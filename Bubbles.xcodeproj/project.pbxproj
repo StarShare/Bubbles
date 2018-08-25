@@ -66,6 +66,7 @@
 		B7E4471120E634A2006BF016 /* BEUIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4470720E634A2006BF016 /* BEUIConfiguration.swift */; };
 		B7E4471220E634A2006BF016 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4470920E634A2006BF016 /* UIImage.swift */; };
 		CB08673520E685AB00BCEBEF /* BEUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */; };
+		CB71471E2130F86C00B1E63B /* NewsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71471D2130F86C00B1E63B /* NewsScene.swift */; };
 		CBF7D0C120F4F2D0003CA8AD /* BEUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF7D0C020F4F2D0003CA8AD /* BEUICollectionView.swift */; };
 		CBF7D0C320F4F36A003CA8AD /* BEUICollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF7D0C220F4F36A003CA8AD /* BEUICollectionViewController.swift */; };
 		E137AC533860EFA511A10C6B /* Pods_Bubbles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868816964AD217FF60CF83B /* Pods_Bubbles.framework */; };
@@ -158,6 +159,7 @@
 		B7E4470720E634A2006BF016 /* BEUIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEUIConfiguration.swift; sourceTree = "<group>"; };
 		B7E4470920E634A2006BF016 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUITabBarController.swift; sourceTree = "<group>"; };
+		CB71471D2130F86C00B1E63B /* NewsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsScene.swift; sourceTree = "<group>"; };
 		CBF7D0C020F4F2D0003CA8AD /* BEUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUICollectionView.swift; sourceTree = "<group>"; };
 		CBF7D0C220F4F36A003CA8AD /* BEUICollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUICollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -510,6 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				B7967A1420F3682D008F4445 /* HomeScene.swift */,
+				CB71471D2130F86C00B1E63B /* NewsScene.swift */,
 			);
 			path = scene;
 			sourceTree = "<group>";
@@ -850,6 +853,7 @@
 				B73CB84420E6353700151982 /* ModuleConfig.swift in Sources */,
 				CB08673520E685AB00BCEBEF /* BEUITabBarController.swift in Sources */,
 				B709C35220EA365100B6CC83 /* MoyaProviderExtension.swift in Sources */,
+				CB71471E2130F86C00B1E63B /* NewsScene.swift in Sources */,
 				B709C34A20EA365000B6CC83 /* TaskEx.swift in Sources */,
 				B709C34B20EA365000B6CC83 /* CoreError.swift in Sources */,
 				B76F803421269C5A0003BE49 /* DEVString.swift in Sources */,

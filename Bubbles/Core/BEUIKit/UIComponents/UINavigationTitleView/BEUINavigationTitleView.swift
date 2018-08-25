@@ -1,10 +1,6 @@
 
 import UIKit
 
-extension UINavigationBar {
-  
-}
-
 open class BEUINavigationTitleView: UIControl {
   
   public private(set) var titleLabel: UILabel!
@@ -13,6 +9,7 @@ open class BEUINavigationTitleView: UIControl {
     didSet {
       titleLabel.text = title
       updateTitleLabelSize()
+      refreshLayout()
     }
   }
   
@@ -20,6 +17,7 @@ open class BEUINavigationTitleView: UIControl {
     didSet {
       titleLabel.font = titleFont
       updateTitleLabelSize()
+      refreshLayout()
     }
   }
   
@@ -75,6 +73,22 @@ open class BEUINavigationTitleView: UIControl {
     } else {
       titleLabelSize = titleLabel.sizeThatFits(CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT)))
     }
+  }
+  
+  private func refreshLayout() {
+    setNeedsLayout()
+  }
+  
+  private func navigationBarSuperviewForSubview(_ view: UIView) -> UINavigationBar? {
+    guard let fatherView = view.superview else {
+      return nil
+    }
+    
+    if fatherView.isKind(of: UINavigationBar.self) {
+      return fatherView as? UINavigationBar
+    }
+    
+    return navigationBarSuperviewForSubview(fatherView)
   }
   
   open override func tintColorDidChange() {

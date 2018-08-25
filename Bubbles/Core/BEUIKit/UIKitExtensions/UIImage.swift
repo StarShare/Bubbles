@@ -11,11 +11,11 @@ public extension UIImage {
   /// - Returns: UIImage object or nil.
   class func imageCreate(color: UIColor, size: CGSize = CGSize(width: 4, height: 4)) -> UIImage? {
     let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-    UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+    UIGraphicsBeginImageContextWithOptions(rect.size, true, 0)
     let context = UIGraphicsGetCurrentContext()
     context?.setFillColor(color.cgColor)
     context?.fill(rect)
-    let rs = UIImage(cgImage:(UIGraphicsGetImageFromCurrentImageContext()?.cgImage!)!)
+    let rs = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     return rs
   }

@@ -31,7 +31,7 @@ struct UITabBarStyle: BEUITabBarStyle {
 
 struct UIOtherStyle: BEUIOtherStyle {
   public var supportedOrientationMask: UIInterfaceOrientationMask = .all
-  public var statusbarStyleLightInitially: Bool = false
+  public var statusbarStyleLightInitially: Bool = true
   public var hidesBottomBarWhenPushedInitially: Bool = false
   public var needsBackBarButtonItemTitle: Bool = false
   public var preventConcurrentNavigationControllerTransitions: Bool = true

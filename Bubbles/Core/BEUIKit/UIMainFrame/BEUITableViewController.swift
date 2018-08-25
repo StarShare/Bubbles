@@ -49,15 +49,16 @@ open class BEUITableViewController: BEUIViewController {
   /// tableview
   /// sometimes get self->tableView ,but the view is not didload.
   /// so excute loadViewIfNeeded() to make viewDidload().
+  public var _tableView: BEUITableView!
   public var tableView: BEUITableView! {
     get {
-      if self.tableView == nil {
+      if _tableView == nil {
         loadViewIfNeeded()
       }
-      return self.tableView!
+      return _tableView
     }
     set {
-      self.tableView = newValue
+      _tableView = newValue
     }
   }
   
@@ -147,7 +148,7 @@ open class BEUITableViewController: BEUIViewController {
   }
   
   open func initTableView() {
-    if tableView == nil {
+    if _tableView == nil {
       tableView = BEUITableView.init(frame: view.bounds,
                                      style: tableStyle)
       tableView.delegate = self
