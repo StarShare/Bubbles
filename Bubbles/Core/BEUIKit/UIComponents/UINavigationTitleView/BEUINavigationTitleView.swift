@@ -1,6 +1,10 @@
 
 import UIKit
 
+extension UINavigationBar {
+  
+}
+
 open class BEUINavigationTitleView: UIControl {
   
   public private(set) var titleLabel: UILabel!
@@ -8,7 +12,6 @@ open class BEUINavigationTitleView: UIControl {
   public var title: String? {
     didSet {
       titleLabel.text = title
-      updateTitleLabelSize()
       refreshLayout()
     }
   }
@@ -16,7 +19,6 @@ open class BEUINavigationTitleView: UIControl {
   public var titleFont: UIFont? {
     didSet {
       titleLabel.font = titleFont
-      updateTitleLabelSize()
       refreshLayout()
     }
   }
@@ -59,24 +61,26 @@ open class BEUINavigationTitleView: UIControl {
     titleLabel.frame = bounds
   }
   
-  open override func sizeThatFits(_ size: CGSize) -> CGSize {
-    return contentSize()
-  }
-  
-  private func contentSize() -> CGSize {
-    return titleLabelSize
-  }
-  
-  private func updateTitleLabelSize() {
+  private func updateTitleLabelSize(_ size: CGSize) {
     if titleLabel.text?.isEmpty == true {
       titleLabelSize = .zero
     } else {
-      titleLabelSize = titleLabel.sizeThatFits(CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT)))
+      titleLabelSize = titleLabel.sizeThatFits(size)
     }
   }
   
   private func refreshLayout() {
-    setNeedsLayout()
+    guard let bar = navigationBarSuperviewForSubview(self)  else {
+      updateTitleLabelSize(CGSize(width: DEVICE_WIDTH, height: NavigationBarHeight))
+      frame = CGRect(origin: frame.origin, size: titleLabelSize)
+      return
+    }
+    if let titleView = bar.topItem?.titleView {
+      guard titleView.isKind(of: BEUINavigationTitleView.self) else {return}
+      let titleViewMaximumWidth = titleView.bounds.size.width
+      updateTitleLabelSize(CGSize(width: titleViewMaximumWidth, height: NavigationBarHeight))
+      frame = CGRect(origin: frame.origin, size: titleLabelSize)
+    }
   }
   
   private func navigationBarSuperviewForSubview(_ view: UIView) -> UINavigationBar? {

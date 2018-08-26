@@ -53,7 +53,6 @@
 		B76F803D212A821A0003BE49 /* DEVTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76F803C212A821A0003BE49 /* DEVTree.swift */; };
 		B76F8040212A8B570003BE49 /* DEVSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76F803F212A8B570003BE49 /* DEVSort.swift */; };
 		B7967A1520F3682E008F4445 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7967A1420F3682D008F4445 /* HomeScene.swift */; };
-		B7967A1720F3685B008F4445 /* HomeNavbarDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7967A1620F3685B008F4445 /* HomeNavbarDateView.swift */; };
 		B7967A1920F36E58008F4445 /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7967A1820F36E58008F4445 /* HomeCollectionCell.swift */; };
 		B7D6A41C20EB508A00846465 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6A41B20EB508A00846465 /* Checker.swift */; };
 		B7D6A41E20EB509B00846465 /* CheckerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6A41D20EB509B00846465 /* CheckerFactory.swift */; };
@@ -67,6 +66,8 @@
 		B7E4471220E634A2006BF016 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4470920E634A2006BF016 /* UIImage.swift */; };
 		CB08673520E685AB00BCEBEF /* BEUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */; };
 		CB71471E2130F86C00B1E63B /* NewsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71471D2130F86C00B1E63B /* NewsScene.swift */; };
+		CB71475E21318D5200B1E63B /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71475D21318D5200B1E63B /* NSObject.swift */; };
+		CB71476021318E1700B1E63B /* BEUICommonDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71475F21318E1700B1E63B /* BEUICommonDefines.swift */; };
 		CBF7D0C120F4F2D0003CA8AD /* BEUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF7D0C020F4F2D0003CA8AD /* BEUICollectionView.swift */; };
 		CBF7D0C320F4F36A003CA8AD /* BEUICollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF7D0C220F4F36A003CA8AD /* BEUICollectionViewController.swift */; };
 		E137AC533860EFA511A10C6B /* Pods_Bubbles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868816964AD217FF60CF83B /* Pods_Bubbles.framework */; };
@@ -146,7 +147,6 @@
 		B76F803C212A821A0003BE49 /* DEVTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEVTree.swift; sourceTree = "<group>"; };
 		B76F803F212A8B570003BE49 /* DEVSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEVSort.swift; sourceTree = "<group>"; };
 		B7967A1420F3682D008F4445 /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
-		B7967A1620F3685B008F4445 /* HomeNavbarDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavbarDateView.swift; sourceTree = "<group>"; };
 		B7967A1820F36E58008F4445 /* HomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
 		B7D6A41B20EB508A00846465 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		B7D6A41D20EB509B00846465 /* CheckerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerFactory.swift; sourceTree = "<group>"; };
@@ -160,6 +160,8 @@
 		B7E4470920E634A2006BF016 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUITabBarController.swift; sourceTree = "<group>"; };
 		CB71471D2130F86C00B1E63B /* NewsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsScene.swift; sourceTree = "<group>"; };
+		CB71475D21318D5200B1E63B /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		CB71475F21318E1700B1E63B /* BEUICommonDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUICommonDefines.swift; sourceTree = "<group>"; };
 		CBF7D0C020F4F2D0003CA8AD /* BEUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUICollectionView.swift; sourceTree = "<group>"; };
 		CBF7D0C220F4F36A003CA8AD /* BEUICollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUICollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -502,7 +504,6 @@
 		B7967A1220F3682D008F4445 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				B7967A1620F3685B008F4445 /* HomeNavbarDateView.swift */,
 				B7967A1820F36E58008F4445 /* HomeCollectionCell.swift */,
 			);
 			path = view;
@@ -600,6 +601,7 @@
 			children = (
 				B7E4470620E634A2006BF016 /* BEUIStyle.swift */,
 				B7E4470720E634A2006BF016 /* BEUIConfiguration.swift */,
+				CB71475F21318E1700B1E63B /* BEUICommonDefines.swift */,
 			);
 			path = UICore;
 			sourceTree = "<group>";
@@ -608,6 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				B7E4470920E634A2006BF016 /* UIImage.swift */,
+				CB71475D21318D5200B1E63B /* NSObject.swift */,
 			);
 			path = UIKitExtensions;
 			sourceTree = "<group>";
@@ -817,8 +820,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B73CB84320E6353700151982 /* ServiceError.swift in Sources */,
-				B7967A1720F3685B008F4445 /* HomeNavbarDateView.swift in Sources */,
 				B709C35120EA365000B6CC83 /* ObservableExtension.swift in Sources */,
+				CB71475E21318D5200B1E63B /* NSObject.swift in Sources */,
 				B709C35720EA365100B6CC83 /* LogPlugin.swift in Sources */,
 				B73CB84120E6353700151982 /* ModuleService.swift in Sources */,
 				B709C34D20EA365000B6CC83 /* Bean.swift in Sources */,
@@ -841,6 +844,7 @@
 				CBF7D0C320F4F36A003CA8AD /* BEUICollectionViewController.swift in Sources */,
 				B76F8040212A8B570003BE49 /* DEVSort.swift in Sources */,
 				B7E4471020E634A2006BF016 /* BEUIStyle.swift in Sources */,
+				CB71476021318E1700B1E63B /* BEUICommonDefines.swift in Sources */,
 				B73CB84820E6353700151982 /* ModuleError.swift in Sources */,
 				B7E4470D20E634A2006BF016 /* BEUINavigationBarTransition.swift in Sources */,
 				B73CB84620E6353700151982 /* ModuleLogger.swift in Sources */,

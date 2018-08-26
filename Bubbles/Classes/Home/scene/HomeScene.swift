@@ -10,8 +10,6 @@ import UIKit
 
 class HomeScene: BEUICollectionViewController {
   
-  var navBarTodayTimeView: HomeNavbarDateView!
-  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -31,9 +29,6 @@ class HomeScene: BEUICollectionViewController {
   
   override func initSubviews() {
     super.initSubviews()
-    
-    /// navBarTodayTimeView
-    navBarTodayTimeView = HomeNavbarDateView()
   }
   
   override func initCollectionView() {

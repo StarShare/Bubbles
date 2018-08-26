@@ -14,10 +14,15 @@ class NewsScene: BEUITableViewController {
   override func didInitialize(style: UITableViewStyle) {
     super.didInitialize(style: style)
     appearance.navigationBarBackgroundImageOrNil = UIImage.imageCreate(color: UIColor.orange)
-    transition.shouldCustomNavigationBarTransitionWhenPushAppearing = false
-    transition.shouldCustomNavigationBarTransitionWhenPushDisappearing = false
-    transition.shouldCustomNavigationBarTransitionWhenPopAppearing = false
-    transition.shouldCustomNavigationBarTransitionWhenPopDisappearing = false
+    transition.shouldCustomNavigationBarTransitionWhenPushAppearing = true
+    transition.shouldCustomNavigationBarTransitionWhenPushDisappearing = true
+    transition.shouldCustomNavigationBarTransitionWhenPopAppearing = true
+    transition.shouldCustomNavigationBarTransitionWhenPopDisappearing = true
+  }
+  
+  override func setupNavigationItems() {
+    super.setupNavigationItems()
+    titleView.title = "News"
   }
   
   override func viewDidLoad() {

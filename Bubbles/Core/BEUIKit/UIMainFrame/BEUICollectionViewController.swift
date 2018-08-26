@@ -121,7 +121,7 @@ open class BEUICollectionViewController: BEUIViewController {
   
   open override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    //layoutTableView()
+    layoutCollectionView()
     
     if shouldAdjustCollectionViewContentInsetsInitially && hasSetInitialContentInset == false {
       collectionView.contentInset = collectionViewInitialContentInset
@@ -156,7 +156,7 @@ open class BEUICollectionViewController: BEUIViewController {
     }
   }
   
-  open func layoutTableView() {
+  open func layoutCollectionView() {
     if view.bounds.equalTo(collectionView.frame) == false {
       collectionView.frame = view.bounds
     }

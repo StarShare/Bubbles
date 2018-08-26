@@ -25,6 +25,7 @@ class AppDelegate: ModuleDelegate {
     
     let home = BEUINavigationController.init(rootViewController: HomeScene())
     window = UIWindow.init(frame: UIScreen.main.bounds)
+    /// window?.windowLevel = UIWindowLevelStatusBar + 1
     window?.rootViewController = home
     window?.makeKeyAndVisible()
     
