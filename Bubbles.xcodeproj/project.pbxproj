@@ -65,6 +65,7 @@
 		B7E4471120E634A2006BF016 /* BEUIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4470720E634A2006BF016 /* BEUIConfiguration.swift */; };
 		B7E4471220E634A2006BF016 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E4470920E634A2006BF016 /* UIImage.swift */; };
 		CB08673520E685AB00BCEBEF /* BEUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */; };
+		CB1D3CDC2134401600E793BE /* DemoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1D3CDB2134401600E793BE /* DemoScene.swift */; };
 		CB71471E2130F86C00B1E63B /* NewsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71471D2130F86C00B1E63B /* NewsScene.swift */; };
 		CB71475E21318D5200B1E63B /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71475D21318D5200B1E63B /* NSObject.swift */; };
 		CB71476021318E1700B1E63B /* BEUICommonDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB71475F21318E1700B1E63B /* BEUICommonDefines.swift */; };
@@ -159,6 +160,7 @@
 		B7E4470720E634A2006BF016 /* BEUIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEUIConfiguration.swift; sourceTree = "<group>"; };
 		B7E4470920E634A2006BF016 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		CB08673420E685AB00BCEBEF /* BEUITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUITabBarController.swift; sourceTree = "<group>"; };
+		CB1D3CDB2134401600E793BE /* DemoScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoScene.swift; sourceTree = "<group>"; };
 		CB71471D2130F86C00B1E63B /* NewsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsScene.swift; sourceTree = "<group>"; };
 		CB71475D21318D5200B1E63B /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		CB71475F21318E1700B1E63B /* BEUICommonDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEUICommonDefines.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 			children = (
 				B7967A1420F3682D008F4445 /* HomeScene.swift */,
 				CB71471D2130F86C00B1E63B /* NewsScene.swift */,
+				CB1D3CDB2134401600E793BE /* DemoScene.swift */,
 			);
 			path = scene;
 			sourceTree = "<group>";
@@ -769,7 +772,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bubbles/Pods-Bubbles-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -781,7 +783,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -873,6 +874,7 @@
 				B709C34F20EA365000B6CC83 /* Core.swift in Sources */,
 				B73CB83D20E6353700151982 /* Event.swift in Sources */,
 				B709C35520EA365100B6CC83 /* CachePlugin.swift in Sources */,
+				CB1D3CDC2134401600E793BE /* DemoScene.swift in Sources */,
 				B74D211D20E1DBB7007DE688 /* AppDelegate.swift in Sources */,
 				B709C35920EA365100B6CC83 /* ProcessPlugin.swift in Sources */,
 				B707D7B820E6409500181227 /* UIStyle.swift in Sources */,

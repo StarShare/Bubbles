@@ -6,7 +6,7 @@ struct BEUINavigationBarDefaultAppearance: BEUINavigationBarAppearance {
   public var navigationBarBackgroundImageOrNil: UIImage? = BEUIConfiguration.style.navigationBarStyle.navBarBackgroundImageOrNil
   public var navigationBarShadowImageOrNil: UIImage? = BEUIConfiguration.style.navigationBarStyle.navBarShadowImageOrNil
   public var navigationBarTintColorOrNil: UIColor? = BEUIConfiguration.style.navigationBarStyle.navBarTintColorOrNil
-  public var titleViewTintColorOrNil: UIColor? = nil
+  public var titleViewTintColorOrNil: UIColor? = BEUIConfiguration.style.navigationBarStyle.navBarTitleColorOrNil
   public var titleViewFontOrNil: UIFont? = BEUIConfiguration.style.navigationBarStyle.navBarTitleFontOrNil
   public var backBarButtonItemTitleOrNil: String? = nil
 }

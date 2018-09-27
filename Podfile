@@ -1,3 +1,4 @@
+source 'git@github.com:CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
@@ -9,5 +10,4 @@ target 'Bubbles' do
   pod 'Cache'
   pod 'RxSwift'
   pod 'WCDB.swift'
-  pod 'CocoaAsyncSocket'
 end

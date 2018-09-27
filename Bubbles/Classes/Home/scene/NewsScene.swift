@@ -14,6 +14,8 @@ class NewsScene: BEUITableViewController {
   override func didInitialize(style: UITableViewStyle) {
     super.didInitialize(style: style)
     appearance.navigationBarBackgroundImageOrNil = UIImage.imageCreate(color: UIColor.orange)
+    appearance.titleViewTintColorOrNil = UIColor.red
+    appearance.titleViewFontOrNil = UIFont.boldSystemFont(ofSize: 23)
     transition.shouldCustomNavigationBarTransitionWhenPushAppearing = true
     transition.shouldCustomNavigationBarTransitionWhenPushDisappearing = true
     transition.shouldCustomNavigationBarTransitionWhenPopAppearing = true
@@ -52,5 +54,10 @@ extension NewsScene {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     return UITableViewCell()
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let demo = DemoScene()
+    navigationController?.pushViewController(demo, animated: true)
   }
 }

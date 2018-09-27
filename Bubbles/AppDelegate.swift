@@ -29,6 +29,8 @@ class AppDelegate: ModuleDelegate {
     window?.rootViewController = home
     window?.makeKeyAndVisible()
     
+    let dic = Dictionary("bbccdfffg".map{ ($0, 1) }, uniquingKeysWith: +)
+    
     return true
   }
 }
